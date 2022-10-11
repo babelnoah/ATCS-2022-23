@@ -1,16 +1,40 @@
 body{
-    padding:0;
-    margin:0;
-    background:#ffd200;
+  background-color:#ffd200;
 }
-h1{
+
+.name-container {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100vh;
+}
+.name{
     font-size:5em;
-    margin:0;
-    padding:0;
-    text-align:center;
-    font-family:'arial';
-    position:absolute;
-    top:45%;
-    left:35%;
-    
+    font-family:'Times New Roman', Times, serif;
+    top:0;
+    position:sticky;
+}
+
+.text{
+  top:700px;
+  align-items:center;
+  position:absolute;
+}
+.square {
+    height: 100vh;
+    width: 100%;
+  }
+
+  .academics-container{
+    display:flex;
+    justify-content:center;
+    height:300vh;
+    position:sticky;
+  }
+
+  .academics{
+    font-size:5em;
+    font-family:'Times New Roman', Times, serif;
+    top:0;
+    position:sticky;
 }
