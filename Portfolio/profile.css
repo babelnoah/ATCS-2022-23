@@ -2,18 +2,19 @@ body {
   background-color: #EBE8E2;
 }
 
+/* general css applied to all clases */
+
+.align-center {
+  text-align: center;
+}
+
 #container {
   width: 800px;
   text-align: center;
   margin: 0 auto;
 }
 
-h1.lined {
-  position: relative;
-  font-size: 30px;
-  display: inline-block;
-  padding: 0 15px;
-}
+/* header (red line) css, content: ''; idea specifically approprated from stack overflow */
 
 h1.lined:before,
 h1.lined:after {
@@ -30,13 +31,14 @@ h1.lined:after {
   left: 100%;
 }
 
-.align-center {
-  text-align: center;
+h1.lined {
+  position: relative;
+  font-size: 30px;
+  display: inline-block;
+  padding: 0 15px;
 }
 
-.color-grey {
-  color: #768A95;
-}
+/* index.html css */
 
 .name-container {
   display: flex;
@@ -53,28 +55,19 @@ h1.lined:after {
   top: 0;
   left: 0;
   position: sticky;
-
 }
 
-.text {
-  top: 700px;
-  left: 385px;
-  position: absolute;
+.subheader {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 300;
   color: #768A95;
-
 }
 
-.square {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
+.subheader-container {
   width: 100%;
-  background-color: #007193;
-  left: 0px;
-  bottom: 0px;
-  color: #768A95;
   position: absolute;
+  top: 60vh;
+  text-align: center;
 }
 
 .sections-container {
@@ -114,15 +107,6 @@ h1.lined:after {
   color: #768A95;
 }
 
-.subheader {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: 300;
-  top: 400px;
-  left: 385px;
-  position: absolute;
-  color: #768A95;
-}
-
 img.profile-photo {
   border-radius: 50%;
   width: 300px;
@@ -132,35 +116,34 @@ img.profile-photo {
   outline-style: solid;
 }
 
-img.tennis-photo {
+/* about-me.html css */
+
+.carousel {
   border-radius: 20%;
-  width: 400px;
+  width: 100%;
   height: 600px;
   outline-color: #768A95;
   outline-width: 5px;
   outline-style: solid;
-  left: 150;
   position: absolute;
+  overflow: hidden;
+}
+
+#carousel-image {
+  height: 100%;
+  object-fit: cover;
 }
 
 .introduction {
-  width: 700;
   font-size: 2em;
-  right: 100px;
-  position: absolute;
-}
-
-.description {
-  position: absolute;
-  right: 100px;
-  width: 700;
-  top: 340px;
 }
 
 .light-font {
   font-family: "Myriad Pro";
   font-weight: normal;
 }
+
+/* contact.html css */
 
 img.contact-photo {
   border-radius: 50%;
@@ -170,50 +153,22 @@ img.contact-photo {
   outline-color: #768A95;
   outline-width: 5px;
   outline-style: solid;
-  top: 100;
-  position: absolute;
 }
 
-.name-info {
+.contact-container {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+
+.contact-info {
   font-family: "Myriad Pro";
   font-weight: bold;
-  right: 650;
-  top: 300;
-  position: absolute;
+  align-items: center;
 }
 
-.instagram-info {
-  font-family: "Myriad Pro";
-  font-weight: bold;
-  right: 570;
-  top: 350;
-  position: absolute;
-}
+/* experience.html css */
 
-.email {
-  font-family: "Myriad Pro";
-  font-weight: bold;
-  top: 400;
-  right: 500;
-  align-items: middle;
-  position: absolute;
-}
-
-.github-info{
-  font-family: "Myriad Pro";
-  font-weight: bold;
-  top: 450;
-  right: 610;
-  align-items: middle;
-  position: absolute;
-}
-
-.card-deck{
-  align-items:center;
-}
-
-row{
-margin-left: auto;
-margin-right: auto;
-align-items: center;
+.card-deck {
+  align-items: center;
 }

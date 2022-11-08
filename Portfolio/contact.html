@@ -3,25 +3,69 @@
 <head>
     <title>Contact</title>
     <link rel="stylesheet" type="text/css" href="profile.css">
+    <link rel="shortcut icon" href="/Users/noah/Desktop/AdvTopics in CompSci (H)/ATCS-2022/Portfolio/logo-github.svg"
+        type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-
+<!-- navbar -->
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/Users/noah/Desktop/AdvTopics in CompSci (H)/ATCS-2022/Portfolio/index.html">Noah
+            Babel</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link"
+                        href="/Users/noah/Desktop/AdvTopics in CompSci (H)/ATCS-2022/Portfolio/index.html">Profile<span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                        href="/Users/noah/Desktop/AdvTopics in CompSci (H)/ATCS-2022/Portfolio/about-me.html">About-me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                        href="/Users/noah/Desktop/AdvTopics in CompSci (H)/ATCS-2022/Portfolio/experience.html">Experience</a>
+                <li class="nav-item">
+                    <a class="nav-link active"
+                        href="/Users/noah/Desktop/AdvTopics in CompSci (H)/ATCS-2022/Portfolio/contact.html active">Contact<span
+                            class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <div id="container">
         <h1 class="lined">Contact me</h1>
     </div>
-    <div class="square">
-        <h1>Want to go back? click <a class="color-grey" href="index.html"><u>here.</u></a></h1>
-    </div>
-    (<!-- In Lab02, I didn't use links properly. In this lab, I successfully utilized links several times -->)
+    <!-- In Lab02, I didn't use links properly. In this lab, I successfully utilized links several times -->
     <div>
-        <img class="contact-photo"
-            src="/Users/noah/Desktop/AdvTopics in CompSci (H)/ATCS-2022/Portfolio/Screen Shot 2022-10-17 at 2.35.44 AM.png">
+<!--  List of buttons when you click them they send you to corrosponding location -->
     </div>
     <div>
-            <h2 class="name-info">Noah Babel</h2>
-            <h2 class="email"><u>Email</u>: noah.babel@menloschool.org</h2>
-            <h2 class="instagram-info"><u>Instagram</u>: @babblenoah</h2>
-            <h2 class="github-info"><u>Github</u>: babblenoah</h2>
+        <div class="contact-container">
+            <img class="contact-photo"
+                src="/Users/noah/Desktop/AdvTopics in CompSci (H)/ATCS-2022/Portfolio/Screen Shot 2022-10-17 at 2.35.44 AM.png">
+            <h2 class="contact-info">Noah Babel</h2>
+            </h><button type="button" onclick="window.location.href = 'https://www.gmail.com/';"
+                class="btn btn-outline-primary">
+                <h2 class="contact-info"><u>Email</u>: noah.babel@menloschool.org</h2>
+            </button>
+            <br>
+            </h><button type="button" onclick="window.location.href = 'https://www.instagram.com/';"
+                class="btn btn-outline-success">
+                <h2 class="contact-info"><u>Instagram</u>: @babblenoah</h2>
+            </button>
+            <br>
+            </h><button type="button" onclick="window.location.href = 'https://www.github.com/';"
+                class="btn btn-outline-danger">
+                <h2 class="contact-info"><u>Github</u>: babblenoah</h2>
+            </button>
+        </div>
     </div>
 </body>
 
