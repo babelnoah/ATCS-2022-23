@@ -1,0 +1,488 @@
+(City|owners) _configure_property(id, Column)
+(City|owners) _configure_property(first_name, Column)
+(City|owners) _configure_property(last_name, Column)
+(City|owners) _configure_property(email, Column)
+(City|owners) _configure_property(phone_number, Column)
+(City|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(City|owners) constructed
+(City|owners) _configure_property(id, Column)
+(City|owners) _configure_property(first_name, Column)
+(City|owners) _configure_property(last_name, Column)
+(City|owners) _configure_property(email, Column)
+(City|owners) _configure_property(phone_number, Column)
+(City|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(City|owners) constructed
+(City|owners) _configure_property(id, Column)
+(City|owners) _configure_property(first_name, Column)
+(City|owners) _configure_property(last_name, Column)
+(City|owners) _configure_property(email, Column)
+(City|owners) _configure_property(phone_number, Column)
+(City|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(City|owners) constructed
+(City|owners) _configure_property(id, Column)
+(City|owners) _configure_property(first_name, Column)
+(City|owners) _configure_property(last_name, Column)
+(City|owners) _configure_property(email, Column)
+(City|owners) _configure_property(phone_number, Column)
+(City|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(City|owners) constructed
+(City|owners) _configure_property(id, Column)
+(City|owners) _configure_property(first_name, Column)
+(City|owners) _configure_property(last_name, Column)
+(City|owners) _configure_property(email, Column)
+(City|owners) _configure_property(phone_number, Column)
+(City|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(City|owners) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+COMMIT
+(City|owners) _configure_property(id, Column)
+(City|owners) _configure_property(first_name, Column)
+(City|owners) _configure_property(last_name, Column)
+(City|owners) _configure_property(email, Column)
+(City|owners) _configure_property(phone_number, Column)
+(City|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(City|owners) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+COMMIT
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT owners.id AS owners_id, owners.first_name AS owners_first_name, owners.last_name AS owners_last_name, owners.email AS owners_email, owners.phone_number AS owners_phone_number 
+FROM owners
+[generated in 0.00025s] ()
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT owners.id AS owners_id, owners.first_name AS owners_first_name, owners.last_name AS owners_last_name, owners.email AS owners_email, owners.phone_number AS owners_phone_number 
+FROM owners
+[generated in 0.00025s] ()
+ROLLBACK
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT owners.id AS owners_id, owners.first_name AS owners_first_name, owners.last_name AS owners_last_name, owners.email AS owners_email, owners.phone_number AS owners_phone_number 
+FROM owners
+[generated in 0.00026s] ()
+ROLLBACK
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vets|vets) _configure_property(id, Column)
+(Vets|vets) _configure_property(first_name, Column)
+(Vets|vets) _configure_property(last_name, Column)
+(Vets|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vets|vets) constructed
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vets|vets) _configure_property(id, Column)
+(Vets|vets) _configure_property(first_name, Column)
+(Vets|vets) _configure_property(last_name, Column)
+(Vets|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vets|vets) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+COMMIT
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT vets.id AS vets_id, vets.first_name AS vets_first_name, vets.last_name AS vets_last_name 
+FROM vets
+[generated in 0.00049s] ()
+ROLLBACK
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+COMMIT
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT owners.id AS owners_id, owners.first_name AS owners_first_name, owners.last_name AS owners_last_name, owners.email AS owners_email, owners.phone_number AS owners_phone_number 
+FROM owners
+[generated in 0.00027s] ()
+SELECT vets.id AS vets_id, vets.first_name AS vets_first_name, vets.last_name AS vets_last_name 
+FROM vets
+[generated in 0.00025s] ()
+SELECT pets.id AS pets_id, pets.name AS pets_name, pets.species AS pets_species, pets.owner_id AS pets_owner_id, owners.id AS owners_id, owners.first_name AS owners_first_name, owners.last_name AS owners_last_name, owners.email AS owners_email, owners.phone_number AS owners_phone_number 
+FROM pets JOIN owners ON pets.owner_id = owners.id
+ LIMIT ? OFFSET ?
+[generated in 0.00051s] (5, 0)
+ROLLBACK
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appts|appts) _configure_property(id, Column)
+(Appts|appts) _configure_property(pet_id, Column)
+(Appts|appts) _configure_property(vet_id, Column)
+(Appts|appts) _configure_property(date, Column)
+(Appts|appts) _configure_property(time, Column)
+(Appts|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appts|appts) constructed
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appts|appts) _configure_property(id, Column)
+(Appts|appts) _configure_property(pet_id, Column)
+(Appts|appts) _configure_property(vet_id, Column)
+(Appts|appts) _configure_property(date, Column)
+(Appts|appts) _configure_property(time, Column)
+(Appts|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appts|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+(Appts|appts) _post_configure_properties() started
+(Appts|appts) initialize prop id
+(Appts|appts) initialize prop pet_id
+(Appts|appts) initialize prop vet_id
+(Appts|appts) initialize prop date
+(Appts|appts) initialize prop time
+(Appts|appts) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT owners.id AS owners_id, owners.first_name AS owners_first_name, owners.last_name AS owners_last_name, owners.email AS owners_email, owners.phone_number AS owners_phone_number 
+FROM owners
+[generated in 0.00023s] ()
+SELECT vets.id AS vets_id, vets.first_name AS vets_first_name, vets.last_name AS vets_last_name 
+FROM vets
+[generated in 0.00024s] ()
+SELECT pets.id AS pets_id, pets.name AS pets_name, pets.species AS pets_species, pets.owner_id AS pets_owner_id, owners.id AS owners_id, owners.first_name AS owners_first_name, owners.last_name AS owners_last_name, owners.email AS owners_email, owners.phone_number AS owners_phone_number 
+FROM pets JOIN owners ON pets.owner_id = owners.id
+ LIMIT ? OFFSET ?
+[generated in 0.00035s] (5, 0)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+(Appointment|appts) _post_configure_properties() started
+(Appointment|appts) initialize prop id
+(Appointment|appts) initialize prop pet_id
+(Appointment|appts) initialize prop vet_id
+(Appointment|appts) initialize prop date
+(Appointment|appts) initialize prop time
+(Appointment|appts) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT owners.id AS owners_id, owners.first_name AS owners_first_name, owners.last_name AS owners_last_name, owners.email AS owners_email, owners.phone_number AS owners_phone_number 
+FROM owners
+[generated in 0.00027s] ()
+SELECT vets.id AS vets_id, vets.first_name AS vets_first_name, vets.last_name AS vets_last_name 
+FROM vets
+[generated in 0.00021s] ()
+SELECT pets.id AS pets_id, pets.name AS pets_name, pets.species AS pets_species, pets.owner_id AS pets_owner_id, owners.id AS owners_id, owners.first_name AS owners_first_name, owners.last_name AS owners_last_name, owners.email AS owners_email, owners.phone_number AS owners_phone_number 
+FROM pets JOIN owners ON pets.owner_id = owners.id
+ LIMIT ? OFFSET ?
+[generated in 0.00052s] (5, 0)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time, vets.id AS vets_id, vets.first_name AS vets_first_name, vets.last_name AS vets_last_name, pets.id AS pets_id, pets.name AS pets_name, pets.species AS pets_species, pets.owner_id AS pets_owner_id 
+FROM appts JOIN vets ON appts.vet_id = vets.id JOIN pets ON appts.pet_id = pets.id
+ LIMIT ? OFFSET ?
+[generated in 0.00044s] (5, 0)
+ROLLBACK

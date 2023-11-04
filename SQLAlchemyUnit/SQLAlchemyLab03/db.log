@@ -1,0 +1,180 @@
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+(Appointment|appts) _post_configure_properties() started
+(Appointment|appts) initialize prop id
+(Appointment|appts) initialize prop pet_id
+(Appointment|appts) initialize prop vet_id
+(Appointment|appts) initialize prop date
+(Appointment|appts) initialize prop time
+(Appointment|appts) _post_configure_properties() complete
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+(Appointment|appts) _post_configure_properties() started
+(Appointment|appts) initialize prop id
+(Appointment|appts) initialize prop pet_id
+(Appointment|appts) initialize prop vet_id
+(Appointment|appts) initialize prop date
+(Appointment|appts) initialize prop time
+(Appointment|appts) _post_configure_properties() complete
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+(Appointment|appts) _post_configure_properties() started
+(Appointment|appts) initialize prop id
+(Appointment|appts) initialize prop pet_id
+(Appointment|appts) initialize prop vet_id
+(Appointment|appts) initialize prop date
+(Appointment|appts) initialize prop time
+(Appointment|appts) _post_configure_properties() complete

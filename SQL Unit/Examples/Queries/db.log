@@ -1,0 +1,536 @@
+(City|cities) _configure_property(id, Column)
+(City|cities) _configure_property(city, Column)
+(City|cities) _configure_property(state, Column)
+(City|cities) _configure_property(population, Column)
+(City|cities) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<cities>, primary_key=True, nullable=False)])
+(City|cities) constructed
+(Department|departments) _configure_property(id, Column)
+(Department|departments) _configure_property(name, Column)
+(Department|departments) _configure_property(budget, Column)
+(Department|departments) _configure_property(city_id, Column)
+(Department|departments) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<departments>, primary_key=True, nullable=False)])
+(Department|departments) constructed
+(Employee|employees) _configure_property(id, Column)
+(Employee|employees) _configure_property(name, Column)
+(Employee|employees) _configure_property(department_id, Column)
+(Employee|employees) _configure_property(role, Column)
+(Employee|employees) _configure_property(salary, Column)
+(Employee|employees) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<employees>, primary_key=True, nullable=False)])
+(Employee|employees) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("cities")
+[raw sql] ()
+PRAGMA main.table_info("departments")
+[raw sql] ()
+PRAGMA main.table_info("employees")
+[raw sql] ()
+COMMIT
+(City|cities) _post_configure_properties() started
+(City|cities) initialize prop id
+(City|cities) initialize prop city
+(City|cities) initialize prop state
+(City|cities) initialize prop population
+(City|cities) _post_configure_properties() complete
+(Department|departments) _post_configure_properties() started
+(Department|departments) initialize prop id
+(Department|departments) initialize prop name
+(Department|departments) initialize prop budget
+(Department|departments) initialize prop city_id
+(Department|departments) _post_configure_properties() complete
+(Employee|employees) _post_configure_properties() started
+(Employee|employees) initialize prop id
+(Employee|employees) initialize prop name
+(Employee|employees) initialize prop department_id
+(Employee|employees) initialize prop role
+(Employee|employees) initialize prop salary
+(Employee|employees) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT cities.id AS cities_id, cities.city AS cities_city, cities.state AS cities_state, cities.population AS cities_population 
+FROM cities
+[generated in 0.00021s] ()
+ROLLBACK
+(City|cities) _configure_property(id, Column)
+(City|cities) _configure_property(city, Column)
+(City|cities) _configure_property(state, Column)
+(City|cities) _configure_property(population, Column)
+(City|cities) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<cities>, primary_key=True, nullable=False)])
+(City|cities) constructed
+(Department|departments) _configure_property(id, Column)
+(Department|departments) _configure_property(name, Column)
+(Department|departments) _configure_property(budget, Column)
+(Department|departments) _configure_property(city_id, Column)
+(Department|departments) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<departments>, primary_key=True, nullable=False)])
+(Department|departments) constructed
+(Employee|employees) _configure_property(id, Column)
+(Employee|employees) _configure_property(name, Column)
+(Employee|employees) _configure_property(department_id, Column)
+(Employee|employees) _configure_property(role, Column)
+(Employee|employees) _configure_property(salary, Column)
+(Employee|employees) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<employees>, primary_key=True, nullable=False)])
+(Employee|employees) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("cities")
+[raw sql] ()
+PRAGMA main.table_info("departments")
+[raw sql] ()
+PRAGMA main.table_info("employees")
+[raw sql] ()
+COMMIT
+(City|cities) _post_configure_properties() started
+(City|cities) initialize prop id
+(City|cities) initialize prop city
+(City|cities) initialize prop state
+(City|cities) initialize prop population
+(City|cities) _post_configure_properties() complete
+(Department|departments) _post_configure_properties() started
+(Department|departments) initialize prop id
+(Department|departments) initialize prop name
+(Department|departments) initialize prop budget
+(Department|departments) initialize prop city_id
+(Department|departments) _post_configure_properties() complete
+(Employee|employees) _post_configure_properties() started
+(Employee|employees) initialize prop id
+(Employee|employees) initialize prop name
+(Employee|employees) initialize prop department_id
+(Employee|employees) initialize prop role
+(Employee|employees) initialize prop salary
+(Employee|employees) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT cities.id AS cities_id, cities.city AS cities_city, cities.state AS cities_state, cities.population AS cities_population 
+FROM cities
+[generated in 0.00018s] ()
+ROLLBACK
+(City|cities) _configure_property(id, Column)
+(City|cities) _configure_property(city, Column)
+(City|cities) _configure_property(state, Column)
+(City|cities) _configure_property(population, Column)
+(City|cities) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<cities>, primary_key=True, nullable=False)])
+(City|cities) constructed
+(Department|departments) _configure_property(id, Column)
+(Department|departments) _configure_property(name, Column)
+(Department|departments) _configure_property(budget, Column)
+(Department|departments) _configure_property(city_id, Column)
+(Department|departments) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<departments>, primary_key=True, nullable=False)])
+(Department|departments) constructed
+(Employee|employees) _configure_property(id, Column)
+(Employee|employees) _configure_property(name, Column)
+(Employee|employees) _configure_property(department_id, Column)
+(Employee|employees) _configure_property(role, Column)
+(Employee|employees) _configure_property(salary, Column)
+(Employee|employees) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<employees>, primary_key=True, nullable=False)])
+(Employee|employees) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("cities")
+[raw sql] ()
+PRAGMA main.table_info("departments")
+[raw sql] ()
+PRAGMA main.table_info("employees")
+[raw sql] ()
+COMMIT
+(City|cities) _post_configure_properties() started
+(City|cities) initialize prop id
+(City|cities) initialize prop city
+(City|cities) initialize prop state
+(City|cities) initialize prop population
+(City|cities) _post_configure_properties() complete
+(Department|departments) _post_configure_properties() started
+(Department|departments) initialize prop id
+(Department|departments) initialize prop name
+(Department|departments) initialize prop budget
+(Department|departments) initialize prop city_id
+(Department|departments) _post_configure_properties() complete
+(Employee|employees) _post_configure_properties() started
+(Employee|employees) initialize prop id
+(Employee|employees) initialize prop name
+(Employee|employees) initialize prop department_id
+(Employee|employees) initialize prop role
+(Employee|employees) initialize prop salary
+(Employee|employees) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT cities.id AS cities_id, cities.city AS cities_city, cities.state AS cities_state, cities.population AS cities_population 
+FROM cities
+[generated in 0.00032s] ()
+SELECT cities.id AS cities_id, cities.city AS cities_city, cities.state AS cities_state, cities.population AS cities_population 
+FROM cities 
+WHERE cities.state = ?
+[generated in 0.00019s] ('New York',)
+ROLLBACK
+(City|cities) _configure_property(id, Column)
+(City|cities) _configure_property(city, Column)
+(City|cities) _configure_property(state, Column)
+(City|cities) _configure_property(population, Column)
+(City|cities) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<cities>, primary_key=True, nullable=False)])
+(City|cities) constructed
+(Department|departments) _configure_property(id, Column)
+(Department|departments) _configure_property(name, Column)
+(Department|departments) _configure_property(budget, Column)
+(Department|departments) _configure_property(city_id, Column)
+(Department|departments) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<departments>, primary_key=True, nullable=False)])
+(Department|departments) constructed
+(Employee|employees) _configure_property(id, Column)
+(Employee|employees) _configure_property(name, Column)
+(Employee|employees) _configure_property(department_id, Column)
+(Employee|employees) _configure_property(role, Column)
+(Employee|employees) _configure_property(salary, Column)
+(Employee|employees) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<employees>, primary_key=True, nullable=False)])
+(Employee|employees) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("cities")
+[raw sql] ()
+PRAGMA main.table_info("departments")
+[raw sql] ()
+PRAGMA main.table_info("employees")
+[raw sql] ()
+COMMIT
+(City|cities) _post_configure_properties() started
+(City|cities) initialize prop id
+(City|cities) initialize prop city
+(City|cities) initialize prop state
+(City|cities) initialize prop population
+(City|cities) _post_configure_properties() complete
+(Department|departments) _post_configure_properties() started
+(Department|departments) initialize prop id
+(Department|departments) initialize prop name
+(Department|departments) initialize prop budget
+(Department|departments) initialize prop city_id
+(Department|departments) _post_configure_properties() complete
+(Employee|employees) _post_configure_properties() started
+(Employee|employees) initialize prop id
+(Employee|employees) initialize prop name
+(Employee|employees) initialize prop department_id
+(Employee|employees) initialize prop role
+(Employee|employees) initialize prop salary
+(Employee|employees) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT cities.id AS cities_id, cities.city AS cities_city, cities.state AS cities_state, cities.population AS cities_population 
+FROM cities
+[generated in 0.00034s] ()
+SELECT cities.id AS cities_id, cities.city AS cities_city, cities.state AS cities_state, cities.population AS cities_population 
+FROM cities 
+WHERE cities.state = ?
+[generated in 0.00028s] ('New York',)
+ROLLBACK
+(City|cities) _configure_property(id, Column)
+(City|cities) _configure_property(city, Column)
+(City|cities) _configure_property(state, Column)
+(City|cities) _configure_property(population, Column)
+(City|cities) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<cities>, primary_key=True, nullable=False)])
+(City|cities) constructed
+(Department|departments) _configure_property(id, Column)
+(Department|departments) _configure_property(name, Column)
+(Department|departments) _configure_property(budget, Column)
+(Department|departments) _configure_property(city_id, Column)
+(Department|departments) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<departments>, primary_key=True, nullable=False)])
+(Department|departments) constructed
+(Employee|employees) _configure_property(id, Column)
+(Employee|employees) _configure_property(name, Column)
+(Employee|employees) _configure_property(department_id, Column)
+(Employee|employees) _configure_property(role, Column)
+(Employee|employees) _configure_property(salary, Column)
+(Employee|employees) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<employees>, primary_key=True, nullable=False)])
+(Employee|employees) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("cities")
+[raw sql] ()
+PRAGMA main.table_info("departments")
+[raw sql] ()
+PRAGMA main.table_info("employees")
+[raw sql] ()
+COMMIT
+(City|cities) _post_configure_properties() started
+(City|cities) initialize prop id
+(City|cities) initialize prop city
+(City|cities) initialize prop state
+(City|cities) initialize prop population
+(City|cities) _post_configure_properties() complete
+(Department|departments) _post_configure_properties() started
+(Department|departments) initialize prop id
+(Department|departments) initialize prop name
+(Department|departments) initialize prop budget
+(Department|departments) initialize prop city_id
+(Department|departments) _post_configure_properties() complete
+(Employee|employees) _post_configure_properties() started
+(Employee|employees) initialize prop id
+(Employee|employees) initialize prop name
+(Employee|employees) initialize prop department_id
+(Employee|employees) initialize prop role
+(Employee|employees) initialize prop salary
+(Employee|employees) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT cities.id AS cities_id, cities.city AS cities_city, cities.state AS cities_state, cities.population AS cities_population 
+FROM cities
+[generated in 0.00023s] ()
+SELECT cities.id AS cities_id, cities.city AS cities_city, cities.state AS cities_state, cities.population AS cities_population 
+FROM cities 
+WHERE cities.state = ?
+[generated in 0.00028s] ('New York',)
+(City|cities) _configure_property(id, Column)
+(City|cities) _configure_property(city, Column)
+(City|cities) _configure_property(state, Column)
+(City|cities) _configure_property(population, Column)
+(City|cities) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<cities>, primary_key=True, nullable=False)])
+(City|cities) constructed
+(Department|departments) _configure_property(id, Column)
+(Department|departments) _configure_property(name, Column)
+(Department|departments) _configure_property(budget, Column)
+(Department|departments) _configure_property(city_id, Column)
+(Department|departments) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<departments>, primary_key=True, nullable=False)])
+(Department|departments) constructed
+(Employee|employees) _configure_property(id, Column)
+(Employee|employees) _configure_property(name, Column)
+(Employee|employees) _configure_property(department_id, Column)
+(Employee|employees) _configure_property(role, Column)
+(Employee|employees) _configure_property(salary, Column)
+(Employee|employees) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<employees>, primary_key=True, nullable=False)])
+(Employee|employees) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("cities")
+[raw sql] ()
+PRAGMA main.table_info("departments")
+[raw sql] ()
+PRAGMA main.table_info("employees")
+[raw sql] ()
+COMMIT
+(City|cities) _post_configure_properties() started
+(City|cities) initialize prop id
+(City|cities) initialize prop city
+(City|cities) initialize prop state
+(City|cities) initialize prop population
+(City|cities) _post_configure_properties() complete
+(Department|departments) _post_configure_properties() started
+(Department|departments) initialize prop id
+(Department|departments) initialize prop name
+(Department|departments) initialize prop budget
+(Department|departments) initialize prop city_id
+(Department|departments) _post_configure_properties() complete
+(Employee|employees) _post_configure_properties() started
+(Employee|employees) initialize prop id
+(Employee|employees) initialize prop name
+(Employee|employees) initialize prop department_id
+(Employee|employees) initialize prop role
+(Employee|employees) initialize prop salary
+(Employee|employees) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT cities.id AS cities_id, cities.city AS cities_city, cities.state AS cities_state, cities.population AS cities_population 
+FROM cities
+[generated in 0.00065s] ()
+SELECT cities.id AS cities_id, cities.city AS cities_city, cities.state AS cities_state, cities.population AS cities_population 
+FROM cities 
+WHERE cities.state = ?
+[generated in 0.00020s] ('New York',)
+(City|cities) _configure_property(id, Column)
+(City|cities) _configure_property(city, Column)
+(City|cities) _configure_property(state, Column)
+(City|cities) _configure_property(population, Column)
+(City|cities) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<cities>, primary_key=True, nullable=False)])
+(City|cities) constructed
+(Department|departments) _configure_property(id, Column)
+(Department|departments) _configure_property(name, Column)
+(Department|departments) _configure_property(budget, Column)
+(Department|departments) _configure_property(city_id, Column)
+(Department|departments) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<departments>, primary_key=True, nullable=False)])
+(Department|departments) constructed
+(Employee|employees) _configure_property(id, Column)
+(Employee|employees) _configure_property(name, Column)
+(Employee|employees) _configure_property(department_id, Column)
+(Employee|employees) _configure_property(role, Column)
+(Employee|employees) _configure_property(salary, Column)
+(Employee|employees) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<employees>, primary_key=True, nullable=False)])
+(Employee|employees) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("cities")
+[raw sql] ()
+PRAGMA main.table_info("departments")
+[raw sql] ()
+PRAGMA main.table_info("employees")
+[raw sql] ()
+COMMIT
+(City|cities) _post_configure_properties() started
+(City|cities) initialize prop id
+(City|cities) initialize prop city
+(City|cities) initialize prop state
+(City|cities) initialize prop population
+(City|cities) _post_configure_properties() complete
+(Department|departments) _post_configure_properties() started
+(Department|departments) initialize prop id
+(Department|departments) initialize prop name
+(Department|departments) initialize prop budget
+(Department|departments) initialize prop city_id
+(Department|departments) _post_configure_properties() complete
+(Employee|employees) _post_configure_properties() started
+(Employee|employees) initialize prop id
+(Employee|employees) initialize prop name
+(Employee|employees) initialize prop department_id
+(Employee|employees) initialize prop role
+(Employee|employees) initialize prop salary
+(Employee|employees) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT cities.id AS cities_id, cities.city AS cities_city, cities.state AS cities_state, cities.population AS cities_population 
+FROM cities
+[generated in 0.00021s] ()
+SELECT cities.id AS cities_id, cities.city AS cities_city, cities.state AS cities_state, cities.population AS cities_population 
+FROM cities 
+WHERE cities.state = ?
+[generated in 0.00022s] ('New York',)
+(City|cities) _configure_property(id, Column)
+(City|cities) _configure_property(city, Column)
+(City|cities) _configure_property(state, Column)
+(City|cities) _configure_property(population, Column)
+(City|cities) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<cities>, primary_key=True, nullable=False)])
+(City|cities) constructed
+(Department|departments) _configure_property(id, Column)
+(Department|departments) _configure_property(name, Column)
+(Department|departments) _configure_property(budget, Column)
+(Department|departments) _configure_property(city_id, Column)
+(Department|departments) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<departments>, primary_key=True, nullable=False)])
+(Department|departments) constructed
+(Employee|employees) _configure_property(id, Column)
+(Employee|employees) _configure_property(name, Column)
+(Employee|employees) _configure_property(department_id, Column)
+(Employee|employees) _configure_property(role, Column)
+(Employee|employees) _configure_property(salary, Column)
+(Employee|employees) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<employees>, primary_key=True, nullable=False)])
+(Employee|employees) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("cities")
+[raw sql] ()
+PRAGMA main.table_info("departments")
+[raw sql] ()
+PRAGMA main.table_info("employees")
+[raw sql] ()
+COMMIT
+(City|cities) _post_configure_properties() started
+(City|cities) initialize prop id
+(City|cities) initialize prop city
+(City|cities) initialize prop state
+(City|cities) initialize prop population
+(City|cities) _post_configure_properties() complete
+(Department|departments) _post_configure_properties() started
+(Department|departments) initialize prop id
+(Department|departments) initialize prop name
+(Department|departments) initialize prop budget
+(Department|departments) initialize prop city_id
+(Department|departments) _post_configure_properties() complete
+(Employee|employees) _post_configure_properties() started
+(Employee|employees) initialize prop id
+(Employee|employees) initialize prop name
+(Employee|employees) initialize prop department_id
+(Employee|employees) initialize prop role
+(Employee|employees) initialize prop salary
+(Employee|employees) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT cities.id AS cities_id, cities.city AS cities_city, cities.state AS cities_state, cities.population AS cities_population 
+FROM cities
+[generated in 0.00028s] ()
+SELECT cities.id AS cities_id, cities.city AS cities_city, cities.state AS cities_state, cities.population AS cities_population 
+FROM cities 
+WHERE cities.state = ?
+[generated in 0.00048s] ('New York',)
+(City|cities) _configure_property(id, Column)
+(City|cities) _configure_property(city, Column)
+(City|cities) _configure_property(state, Column)
+(City|cities) _configure_property(population, Column)
+(City|cities) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<cities>, primary_key=True, nullable=False)])
+(City|cities) constructed
+(Department|departments) _configure_property(id, Column)
+(Department|departments) _configure_property(name, Column)
+(Department|departments) _configure_property(budget, Column)
+(Department|departments) _configure_property(city_id, Column)
+(Department|departments) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<departments>, primary_key=True, nullable=False)])
+(Department|departments) constructed
+(Employee|employees) _configure_property(id, Column)
+(Employee|employees) _configure_property(name, Column)
+(Employee|employees) _configure_property(department_id, Column)
+(Employee|employees) _configure_property(role, Column)
+(Employee|employees) _configure_property(salary, Column)
+(Employee|employees) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<employees>, primary_key=True, nullable=False)])
+(Employee|employees) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("cities")
+[raw sql] ()
+PRAGMA main.table_info("departments")
+[raw sql] ()
+PRAGMA main.table_info("employees")
+[raw sql] ()
+COMMIT
+(City|cities) _post_configure_properties() started
+(City|cities) initialize prop id
+(City|cities) initialize prop city
+(City|cities) initialize prop state
+(City|cities) initialize prop population
+(City|cities) _post_configure_properties() complete
+(Department|departments) _post_configure_properties() started
+(Department|departments) initialize prop id
+(Department|departments) initialize prop name
+(Department|departments) initialize prop budget
+(Department|departments) initialize prop city_id
+(Department|departments) _post_configure_properties() complete
+(Employee|employees) _post_configure_properties() started
+(Employee|employees) initialize prop id
+(Employee|employees) initialize prop name
+(Employee|employees) initialize prop department_id
+(Employee|employees) initialize prop role
+(Employee|employees) initialize prop salary
+(Employee|employees) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT cities.id AS cities_id, cities.city AS cities_city, cities.state AS cities_state, cities.population AS cities_population 
+FROM cities
+[generated in 0.00022s] ()
+SELECT cities.id AS cities_id, cities.city AS cities_city, cities.state AS cities_state, cities.population AS cities_population 
+FROM cities 
+WHERE cities.state = ?
+[generated in 0.00023s] ('New York',)
+(City|cities) _configure_property(id, Column)
+(City|cities) _configure_property(city, Column)
+(City|cities) _configure_property(state, Column)
+(City|cities) _configure_property(population, Column)
+(City|cities) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<cities>, primary_key=True, nullable=False)])
+(City|cities) constructed
+(Department|departments) _configure_property(id, Column)
+(Department|departments) _configure_property(name, Column)
+(Department|departments) _configure_property(budget, Column)
+(Department|departments) _configure_property(city_id, Column)
+(Department|departments) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<departments>, primary_key=True, nullable=False)])
+(Department|departments) constructed
+(Employee|employees) _configure_property(id, Column)
+(Employee|employees) _configure_property(name, Column)
+(Employee|employees) _configure_property(department_id, Column)
+(Employee|employees) _configure_property(role, Column)
+(Employee|employees) _configure_property(salary, Column)
+(Employee|employees) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<employees>, primary_key=True, nullable=False)])
+(Employee|employees) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("cities")
+[raw sql] ()
+PRAGMA main.table_info("departments")
+[raw sql] ()
+PRAGMA main.table_info("employees")
+[raw sql] ()
+COMMIT
+(City|cities) _post_configure_properties() started
+(City|cities) initialize prop id
+(City|cities) initialize prop city
+(City|cities) initialize prop state
+(City|cities) initialize prop population
+(City|cities) _post_configure_properties() complete
+(Department|departments) _post_configure_properties() started
+(Department|departments) initialize prop id
+(Department|departments) initialize prop name
+(Department|departments) initialize prop budget
+(Department|departments) initialize prop city_id
+(Department|departments) _post_configure_properties() complete
+(Employee|employees) _post_configure_properties() started
+(Employee|employees) initialize prop id
+(Employee|employees) initialize prop name
+(Employee|employees) initialize prop department_id
+(Employee|employees) initialize prop role
+(Employee|employees) initialize prop salary
+(Employee|employees) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT cities.id AS cities_id, cities.city AS cities_city, cities.state AS cities_state, cities.population AS cities_population 
+FROM cities
+[generated in 0.00021s] ()
+SELECT cities.id AS cities_id, cities.city AS cities_city, cities.state AS cities_state, cities.population AS cities_population 
+FROM cities 
+WHERE cities.state = ?
+[generated in 0.00027s] ('New York',)

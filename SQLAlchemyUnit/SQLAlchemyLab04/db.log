@@ -1,0 +1,3448 @@
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop pets
+Owner.pets setup primary join owners.id = pets.owner_id
+Owner.pets setup secondary join None
+Owner.pets synchronize pairs [(owners.id => pets.owner_id)]
+Owner.pets secondary synchronize pairs []
+Owner.pets local/remote pairs [(owners.id / pets.owner_id)]
+Owner.pets remote columns [pets.owner_id]
+Owner.pets local columns [owners.id]
+Owner.pets relationship direction RelationshipDirection.ONETOMANY
+Owner.pets lazy loading clause :param_1 = pets.owner_id
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+(Appointment|appts) _post_configure_properties() started
+(Appointment|appts) initialize prop id
+(Appointment|appts) initialize prop pet_id
+(Appointment|appts) initialize prop vet_id
+(Appointment|appts) initialize prop date
+(Appointment|appts) initialize prop time
+(Appointment|appts) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT owners.id AS owners_id, owners.first_name AS owners_first_name, owners.last_name AS owners_last_name, owners.email AS owners_email, owners.phone_number AS owners_phone_number 
+FROM owners
+ LIMIT ? OFFSET ?
+[generated in 0.00027s] (1, 0)
+SELECT pets.id AS pets_id, pets.name AS pets_name, pets.species AS pets_species, pets.owner_id AS pets_owner_id 
+FROM pets 
+WHERE ? = pets.owner_id
+[generated in 0.00021s] (1,)
+ROLLBACK
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(patients, Relationship)
+(Vet|vets) _configure_property(appts, Relationship)
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(owner, Relationship)
+(Pet|pets) _configure_property(appts, Relationship)
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(vet, Relationship)
+(Appointment|appts) _configure_property(pet, Relationship)
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop pets
+Owner.pets setup primary join owners.id = pets.owner_id
+Owner.pets setup secondary join None
+Owner.pets synchronize pairs [(owners.id => pets.owner_id)]
+Owner.pets secondary synchronize pairs []
+Owner.pets local/remote pairs [(owners.id / pets.owner_id)]
+Owner.pets remote columns [pets.owner_id]
+Owner.pets local columns [owners.id]
+Owner.pets relationship direction RelationshipDirection.ONETOMANY
+Owner.pets lazy loading clause :param_1 = pets.owner_id
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop patients
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(patients, Relationship)
+(Vet|vets) _configure_property(appts, Relationship)
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(owner, Relationship)
+(Pet|pets) _configure_property(appts, Relationship)
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(vet, Relationship)
+(Appointment|appts) _configure_property(pet, Relationship)
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop pets
+Owner.pets setup primary join owners.id = pets.owner_id
+Owner.pets setup secondary join None
+Owner.pets synchronize pairs [(owners.id => pets.owner_id)]
+Owner.pets secondary synchronize pairs []
+Owner.pets local/remote pairs [(owners.id / pets.owner_id)]
+Owner.pets remote columns [pets.owner_id]
+Owner.pets local columns [owners.id]
+Owner.pets relationship direction RelationshipDirection.ONETOMANY
+Owner.pets lazy loading clause :param_1 = pets.owner_id
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop patients
+Vet.patients setup primary join vets.id = appts.vet_id
+Vet.patients setup secondary join pets.id = appts.pet_id
+Vet.patients synchronize pairs [(vets.id => appts.vet_id)]
+Vet.patients secondary synchronize pairs [(pets.id => appts.pet_id)]
+Vet.patients local/remote pairs [(vets.id / appts.vet_id),(pets.id / appts.pet_id)]
+Vet.patients remote columns [appts.vet_id,appts.pet_id]
+Vet.patients local columns [vets.id]
+Vet.patients relationship direction RelationshipDirection.MANYTOMANY
+Vet.patients lazy loading clause :param_1 = appts.vet_id AND pets.id = appts.pet_id
+(Vet|vets) initialize prop appts
+Vet.appts setup primary join vets.id = appts.vet_id
+Vet.appts setup secondary join None
+Vet.appts synchronize pairs [(vets.id => appts.vet_id)]
+Vet.appts secondary synchronize pairs []
+Vet.appts local/remote pairs [(vets.id / appts.vet_id)]
+Vet.appts remote columns [appts.vet_id]
+Vet.appts local columns [vets.id]
+Vet.appts relationship direction RelationshipDirection.ONETOMANY
+Vet.appts lazy loading clause :param_1 = appts.vet_id
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop owner
+Pet.owner setup primary join owners.id = pets.owner_id
+Pet.owner setup secondary join None
+Pet.owner synchronize pairs [(owners.id => pets.owner_id)]
+Pet.owner secondary synchronize pairs []
+Pet.owner local/remote pairs [(pets.owner_id / owners.id)]
+Pet.owner remote columns [owners.id]
+Pet.owner local columns [pets.owner_id]
+Pet.owner relationship direction RelationshipDirection.MANYTOONE
+Pet.owner lazy loading clause owners.id = :param_1
+Pet.owner will use Session.get() to optimize instance loads
+(Pet|pets) initialize prop appts
+Pet.appts setup primary join pets.id = appts.pet_id
+Pet.appts setup secondary join None
+Pet.appts synchronize pairs [(pets.id => appts.pet_id)]
+Pet.appts secondary synchronize pairs []
+Pet.appts local/remote pairs [(pets.id / appts.pet_id)]
+Pet.appts remote columns [appts.pet_id]
+Pet.appts local columns [pets.id]
+Pet.appts relationship direction RelationshipDirection.ONETOMANY
+Pet.appts lazy loading clause :param_1 = appts.pet_id
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+(Appointment|appts) _post_configure_properties() started
+(Appointment|appts) initialize prop vet
+Appointment.vet setup primary join vets.id = appts.vet_id
+Appointment.vet setup secondary join None
+Appointment.vet synchronize pairs [(vets.id => appts.vet_id)]
+Appointment.vet secondary synchronize pairs []
+Appointment.vet local/remote pairs [(appts.vet_id / vets.id)]
+Appointment.vet remote columns [vets.id]
+Appointment.vet local columns [appts.vet_id]
+Appointment.vet relationship direction RelationshipDirection.MANYTOONE
+Appointment.vet lazy loading clause vets.id = :param_1
+Appointment.vet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop pet
+Appointment.pet setup primary join pets.id = appts.pet_id
+Appointment.pet setup secondary join None
+Appointment.pet synchronize pairs [(pets.id => appts.pet_id)]
+Appointment.pet secondary synchronize pairs []
+Appointment.pet local/remote pairs [(appts.pet_id / pets.id)]
+Appointment.pet remote columns [pets.id]
+Appointment.pet local columns [appts.pet_id]
+Appointment.pet relationship direction RelationshipDirection.MANYTOONE
+Appointment.pet lazy loading clause pets.id = :param_1
+Appointment.pet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop id
+(Appointment|appts) initialize prop pet_id
+(Appointment|appts) initialize prop vet_id
+(Appointment|appts) initialize prop date
+(Appointment|appts) initialize prop time
+(Appointment|appts) _post_configure_properties() complete
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(patients, Relationship)
+(Vet|vets) _configure_property(appts, Relationship)
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(owner, Relationship)
+(Pet|pets) _configure_property(appts, Relationship)
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(vet, Relationship)
+(Appointment|appts) _configure_property(pet, Relationship)
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(patients, Relationship)
+(Vet|vets) _configure_property(appts, Relationship)
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(owner, Relationship)
+(Pet|pets) _configure_property(appts, Relationship)
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(vet, Relationship)
+(Appointment|appts) _configure_property(pet, Relationship)
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop pets
+Owner.pets setup primary join owners.id = pets.owner_id
+Owner.pets setup secondary join None
+Owner.pets synchronize pairs [(owners.id => pets.owner_id)]
+Owner.pets secondary synchronize pairs []
+Owner.pets local/remote pairs [(owners.id / pets.owner_id)]
+Owner.pets remote columns [pets.owner_id]
+Owner.pets local columns [owners.id]
+Owner.pets relationship direction RelationshipDirection.ONETOMANY
+Owner.pets lazy loading clause :param_1 = pets.owner_id
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop patients
+Vet.patients setup primary join vets.id = appts.vet_id
+Vet.patients setup secondary join pets.id = appts.pet_id
+Vet.patients synchronize pairs [(vets.id => appts.vet_id)]
+Vet.patients secondary synchronize pairs [(pets.id => appts.pet_id)]
+Vet.patients local/remote pairs [(vets.id / appts.vet_id),(pets.id / appts.pet_id)]
+Vet.patients remote columns [appts.vet_id,appts.pet_id]
+Vet.patients local columns [vets.id]
+Vet.patients relationship direction RelationshipDirection.MANYTOMANY
+Vet.patients lazy loading clause :param_1 = appts.vet_id AND pets.id = appts.pet_id
+(Vet|vets) initialize prop appts
+Vet.appts setup primary join vets.id = appts.vet_id
+Vet.appts setup secondary join None
+Vet.appts synchronize pairs [(vets.id => appts.vet_id)]
+Vet.appts secondary synchronize pairs []
+Vet.appts local/remote pairs [(vets.id / appts.vet_id)]
+Vet.appts remote columns [appts.vet_id]
+Vet.appts local columns [vets.id]
+Vet.appts relationship direction RelationshipDirection.ONETOMANY
+Vet.appts lazy loading clause :param_1 = appts.vet_id
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop owner
+Pet.owner setup primary join owners.id = pets.owner_id
+Pet.owner setup secondary join None
+Pet.owner synchronize pairs [(owners.id => pets.owner_id)]
+Pet.owner secondary synchronize pairs []
+Pet.owner local/remote pairs [(pets.owner_id / owners.id)]
+Pet.owner remote columns [owners.id]
+Pet.owner local columns [pets.owner_id]
+Pet.owner relationship direction RelationshipDirection.MANYTOONE
+Pet.owner lazy loading clause owners.id = :param_1
+Pet.owner will use Session.get() to optimize instance loads
+(Pet|pets) initialize prop appts
+Pet.appts setup primary join pets.id = appts.pet_id
+Pet.appts setup secondary join None
+Pet.appts synchronize pairs [(pets.id => appts.pet_id)]
+Pet.appts secondary synchronize pairs []
+Pet.appts local/remote pairs [(pets.id / appts.pet_id)]
+Pet.appts remote columns [appts.pet_id]
+Pet.appts local columns [pets.id]
+Pet.appts relationship direction RelationshipDirection.ONETOMANY
+Pet.appts lazy loading clause :param_1 = appts.pet_id
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+(Appointment|appts) _post_configure_properties() started
+(Appointment|appts) initialize prop vet
+Appointment.vet setup primary join vets.id = appts.vet_id
+Appointment.vet setup secondary join None
+Appointment.vet synchronize pairs [(vets.id => appts.vet_id)]
+Appointment.vet secondary synchronize pairs []
+Appointment.vet local/remote pairs [(appts.vet_id / vets.id)]
+Appointment.vet remote columns [vets.id]
+Appointment.vet local columns [appts.vet_id]
+Appointment.vet relationship direction RelationshipDirection.MANYTOONE
+Appointment.vet lazy loading clause vets.id = :param_1
+Appointment.vet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop pet
+Appointment.pet setup primary join pets.id = appts.pet_id
+Appointment.pet setup secondary join None
+Appointment.pet synchronize pairs [(pets.id => appts.pet_id)]
+Appointment.pet secondary synchronize pairs []
+Appointment.pet local/remote pairs [(appts.pet_id / pets.id)]
+Appointment.pet remote columns [pets.id]
+Appointment.pet local columns [appts.pet_id]
+Appointment.pet relationship direction RelationshipDirection.MANYTOONE
+Appointment.pet lazy loading clause pets.id = :param_1
+Appointment.pet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop id
+(Appointment|appts) initialize prop pet_id
+(Appointment|appts) initialize prop vet_id
+(Appointment|appts) initialize prop date
+(Appointment|appts) initialize prop time
+(Appointment|appts) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT owners.id AS owners_id, owners.first_name AS owners_first_name, owners.last_name AS owners_last_name, owners.email AS owners_email, owners.phone_number AS owners_phone_number 
+FROM owners 
+WHERE owners.phone_number = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00031s] ('555-1234', 1, 0)
+SELECT pets.id AS pets_id, pets.name AS pets_name, pets.species AS pets_species, pets.owner_id AS pets_owner_id 
+FROM pets 
+WHERE ? = pets.owner_id
+[generated in 0.00029s] (1,)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE ? = appts.pet_id
+[generated in 0.00038s] (1,)
+SELECT vets.id AS vets_id, vets.first_name AS vets_first_name, vets.last_name AS vets_last_name 
+FROM vets 
+WHERE vets.id = ?
+[generated in 0.00025s] (1,)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE ? = appts.pet_id
+[cached since 0.005523s ago] (11,)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE ? = appts.pet_id
+[cached since 0.0071s ago] (15,)
+ROLLBACK
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(appts, Relationship)
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(owner, Relationship)
+(Pet|pets) _configure_property(appts, Relationship)
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(vet, Relationship)
+(Appointment|appts) _configure_property(pet, Relationship)
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(appts, Relationship)
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(owner, Relationship)
+(Pet|pets) _configure_property(appts, Relationship)
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(vet, Relationship)
+(Appointment|appts) _configure_property(pet, Relationship)
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(appts, Relationship)
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(owner, Relationship)
+(Pet|pets) _configure_property(appts, Relationship)
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(vet, Relationship)
+(Appointment|appts) _configure_property(pet, Relationship)
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop pets
+Owner.pets setup primary join owners.id = pets.owner_id
+Owner.pets setup secondary join None
+Owner.pets synchronize pairs [(owners.id => pets.owner_id)]
+Owner.pets secondary synchronize pairs []
+Owner.pets local/remote pairs [(owners.id / pets.owner_id)]
+Owner.pets remote columns [pets.owner_id]
+Owner.pets local columns [owners.id]
+Owner.pets relationship direction RelationshipDirection.ONETOMANY
+Owner.pets lazy loading clause :param_1 = pets.owner_id
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop appts
+Vet.appts setup primary join vets.id = appts.vet_id
+Vet.appts setup secondary join None
+Vet.appts synchronize pairs [(vets.id => appts.vet_id)]
+Vet.appts secondary synchronize pairs []
+Vet.appts local/remote pairs [(vets.id / appts.vet_id)]
+Vet.appts remote columns [appts.vet_id]
+Vet.appts local columns [vets.id]
+Vet.appts relationship direction RelationshipDirection.ONETOMANY
+Vet.appts lazy loading clause :param_1 = appts.vet_id
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop owner
+Pet.owner setup primary join owners.id = pets.owner_id
+Pet.owner setup secondary join None
+Pet.owner synchronize pairs [(owners.id => pets.owner_id)]
+Pet.owner secondary synchronize pairs []
+Pet.owner local/remote pairs [(pets.owner_id / owners.id)]
+Pet.owner remote columns [owners.id]
+Pet.owner local columns [pets.owner_id]
+Pet.owner relationship direction RelationshipDirection.MANYTOONE
+Pet.owner lazy loading clause owners.id = :param_1
+Pet.owner will use Session.get() to optimize instance loads
+(Pet|pets) initialize prop appts
+Pet.appts setup primary join pets.id = appts.pet_id
+Pet.appts setup secondary join None
+Pet.appts synchronize pairs [(pets.id => appts.pet_id)]
+Pet.appts secondary synchronize pairs []
+Pet.appts local/remote pairs [(pets.id / appts.pet_id)]
+Pet.appts remote columns [appts.pet_id]
+Pet.appts local columns [pets.id]
+Pet.appts relationship direction RelationshipDirection.ONETOMANY
+Pet.appts lazy loading clause :param_1 = appts.pet_id
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+(Appointment|appts) _post_configure_properties() started
+(Appointment|appts) initialize prop vet
+Appointment.vet setup primary join vets.id = appts.vet_id
+Appointment.vet setup secondary join None
+Appointment.vet synchronize pairs [(vets.id => appts.vet_id)]
+Appointment.vet secondary synchronize pairs []
+Appointment.vet local/remote pairs [(appts.vet_id / vets.id)]
+Appointment.vet remote columns [vets.id]
+Appointment.vet local columns [appts.vet_id]
+Appointment.vet relationship direction RelationshipDirection.MANYTOONE
+Appointment.vet lazy loading clause vets.id = :param_1
+Appointment.vet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop pet
+Appointment.pet setup primary join pets.id = appts.pet_id
+Appointment.pet setup secondary join None
+Appointment.pet synchronize pairs [(pets.id => appts.pet_id)]
+Appointment.pet secondary synchronize pairs []
+Appointment.pet local/remote pairs [(appts.pet_id / pets.id)]
+Appointment.pet remote columns [pets.id]
+Appointment.pet local columns [appts.pet_id]
+Appointment.pet relationship direction RelationshipDirection.MANYTOONE
+Appointment.pet lazy loading clause pets.id = :param_1
+Appointment.pet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop id
+(Appointment|appts) initialize prop pet_id
+(Appointment|appts) initialize prop vet_id
+(Appointment|appts) initialize prop date
+(Appointment|appts) initialize prop time
+(Appointment|appts) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT owners.id AS owners_id, owners.first_name AS owners_first_name, owners.last_name AS owners_last_name, owners.email AS owners_email, owners.phone_number AS owners_phone_number 
+FROM owners 
+WHERE owners.phone_number = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00033s] ('555-1234', 1, 0)
+SELECT pets.id AS pets_id, pets.name AS pets_name, pets.species AS pets_species, pets.owner_id AS pets_owner_id 
+FROM pets 
+WHERE ? = pets.owner_id
+[generated in 0.00026s] (1,)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE ? = appts.pet_id
+[generated in 0.00029s] (1,)
+SELECT vets.id AS vets_id, vets.first_name AS vets_first_name, vets.last_name AS vets_last_name 
+FROM vets 
+WHERE vets.id = ?
+[generated in 0.00029s] (1,)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE ? = appts.pet_id
+[cached since 0.005545s ago] (11,)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE ? = appts.pet_id
+[cached since 0.006648s ago] (15,)
+ROLLBACK
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(appts, Relationship)
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(owner, Relationship)
+(Pet|pets) _configure_property(appts, Relationship)
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(vet, Relationship)
+(Appointment|appts) _configure_property(pet, Relationship)
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop pets
+Owner.pets setup primary join owners.id = pets.owner_id
+Owner.pets setup secondary join None
+Owner.pets synchronize pairs [(owners.id => pets.owner_id)]
+Owner.pets secondary synchronize pairs []
+Owner.pets local/remote pairs [(owners.id / pets.owner_id)]
+Owner.pets remote columns [pets.owner_id]
+Owner.pets local columns [owners.id]
+Owner.pets relationship direction RelationshipDirection.ONETOMANY
+Owner.pets lazy loading clause :param_1 = pets.owner_id
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop appts
+Vet.appts setup primary join vets.id = appts.vet_id
+Vet.appts setup secondary join None
+Vet.appts synchronize pairs [(vets.id => appts.vet_id)]
+Vet.appts secondary synchronize pairs []
+Vet.appts local/remote pairs [(vets.id / appts.vet_id)]
+Vet.appts remote columns [appts.vet_id]
+Vet.appts local columns [vets.id]
+Vet.appts relationship direction RelationshipDirection.ONETOMANY
+Vet.appts lazy loading clause :param_1 = appts.vet_id
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop owner
+Pet.owner setup primary join owners.id = pets.owner_id
+Pet.owner setup secondary join None
+Pet.owner synchronize pairs [(owners.id => pets.owner_id)]
+Pet.owner secondary synchronize pairs []
+Pet.owner local/remote pairs [(pets.owner_id / owners.id)]
+Pet.owner remote columns [owners.id]
+Pet.owner local columns [pets.owner_id]
+Pet.owner relationship direction RelationshipDirection.MANYTOONE
+Pet.owner lazy loading clause owners.id = :param_1
+Pet.owner will use Session.get() to optimize instance loads
+(Pet|pets) initialize prop appts
+Pet.appts setup primary join pets.id = appts.pet_id
+Pet.appts setup secondary join None
+Pet.appts synchronize pairs [(pets.id => appts.pet_id)]
+Pet.appts secondary synchronize pairs []
+Pet.appts local/remote pairs [(pets.id / appts.pet_id)]
+Pet.appts remote columns [appts.pet_id]
+Pet.appts local columns [pets.id]
+Pet.appts relationship direction RelationshipDirection.ONETOMANY
+Pet.appts lazy loading clause :param_1 = appts.pet_id
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+(Appointment|appts) _post_configure_properties() started
+(Appointment|appts) initialize prop vet
+Appointment.vet setup primary join vets.id = appts.vet_id
+Appointment.vet setup secondary join None
+Appointment.vet synchronize pairs [(vets.id => appts.vet_id)]
+Appointment.vet secondary synchronize pairs []
+Appointment.vet local/remote pairs [(appts.vet_id / vets.id)]
+Appointment.vet remote columns [vets.id]
+Appointment.vet local columns [appts.vet_id]
+Appointment.vet relationship direction RelationshipDirection.MANYTOONE
+Appointment.vet lazy loading clause vets.id = :param_1
+Appointment.vet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop pet
+Appointment.pet setup primary join pets.id = appts.pet_id
+Appointment.pet setup secondary join None
+Appointment.pet synchronize pairs [(pets.id => appts.pet_id)]
+Appointment.pet secondary synchronize pairs []
+Appointment.pet local/remote pairs [(appts.pet_id / pets.id)]
+Appointment.pet remote columns [pets.id]
+Appointment.pet local columns [appts.pet_id]
+Appointment.pet relationship direction RelationshipDirection.MANYTOONE
+Appointment.pet lazy loading clause pets.id = :param_1
+Appointment.pet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop id
+(Appointment|appts) initialize prop pet_id
+(Appointment|appts) initialize prop vet_id
+(Appointment|appts) initialize prop date
+(Appointment|appts) initialize prop time
+(Appointment|appts) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT owners.id AS owners_id, owners.first_name AS owners_first_name, owners.last_name AS owners_last_name, owners.email AS owners_email, owners.phone_number AS owners_phone_number 
+FROM owners 
+WHERE owners.phone_number = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00022s] ('555-5678', 1, 0)
+SELECT pets.id AS pets_id, pets.name AS pets_name, pets.species AS pets_species, pets.owner_id AS pets_owner_id 
+FROM pets 
+WHERE ? = pets.owner_id
+[generated in 0.00024s] (2,)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE ? = appts.pet_id
+[generated in 0.00021s] (2,)
+SELECT vets.id AS vets_id, vets.first_name AS vets_first_name, vets.last_name AS vets_last_name 
+FROM vets 
+WHERE vets.id = ?
+[generated in 0.00024s] (2,)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE ? = appts.pet_id
+[cached since 0.003791s ago] (12,)
+ROLLBACK
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(appts, Relationship)
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(owner, Relationship)
+(Pet|pets) _configure_property(appts, Relationship)
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(vet, Relationship)
+(Appointment|appts) _configure_property(pet, Relationship)
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop pets
+Owner.pets setup primary join owners.id = pets.owner_id
+Owner.pets setup secondary join None
+Owner.pets synchronize pairs [(owners.id => pets.owner_id)]
+Owner.pets secondary synchronize pairs []
+Owner.pets local/remote pairs [(owners.id / pets.owner_id)]
+Owner.pets remote columns [pets.owner_id]
+Owner.pets local columns [owners.id]
+Owner.pets relationship direction RelationshipDirection.ONETOMANY
+Owner.pets lazy loading clause :param_1 = pets.owner_id
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop appts
+Vet.appts setup primary join vets.id = appts.vet_id
+Vet.appts setup secondary join None
+Vet.appts synchronize pairs [(vets.id => appts.vet_id)]
+Vet.appts secondary synchronize pairs []
+Vet.appts local/remote pairs [(vets.id / appts.vet_id)]
+Vet.appts remote columns [appts.vet_id]
+Vet.appts local columns [vets.id]
+Vet.appts relationship direction RelationshipDirection.ONETOMANY
+Vet.appts lazy loading clause :param_1 = appts.vet_id
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop owner
+Pet.owner setup primary join owners.id = pets.owner_id
+Pet.owner setup secondary join None
+Pet.owner synchronize pairs [(owners.id => pets.owner_id)]
+Pet.owner secondary synchronize pairs []
+Pet.owner local/remote pairs [(pets.owner_id / owners.id)]
+Pet.owner remote columns [owners.id]
+Pet.owner local columns [pets.owner_id]
+Pet.owner relationship direction RelationshipDirection.MANYTOONE
+Pet.owner lazy loading clause owners.id = :param_1
+Pet.owner will use Session.get() to optimize instance loads
+(Pet|pets) initialize prop appts
+Pet.appts setup primary join pets.id = appts.pet_id
+Pet.appts setup secondary join None
+Pet.appts synchronize pairs [(pets.id => appts.pet_id)]
+Pet.appts secondary synchronize pairs []
+Pet.appts local/remote pairs [(pets.id / appts.pet_id)]
+Pet.appts remote columns [appts.pet_id]
+Pet.appts local columns [pets.id]
+Pet.appts relationship direction RelationshipDirection.ONETOMANY
+Pet.appts lazy loading clause :param_1 = appts.pet_id
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+(Appointment|appts) _post_configure_properties() started
+(Appointment|appts) initialize prop vet
+Appointment.vet setup primary join vets.id = appts.vet_id
+Appointment.vet setup secondary join None
+Appointment.vet synchronize pairs [(vets.id => appts.vet_id)]
+Appointment.vet secondary synchronize pairs []
+Appointment.vet local/remote pairs [(appts.vet_id / vets.id)]
+Appointment.vet remote columns [vets.id]
+Appointment.vet local columns [appts.vet_id]
+Appointment.vet relationship direction RelationshipDirection.MANYTOONE
+Appointment.vet lazy loading clause vets.id = :param_1
+Appointment.vet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop pet
+Appointment.pet setup primary join pets.id = appts.pet_id
+Appointment.pet setup secondary join None
+Appointment.pet synchronize pairs [(pets.id => appts.pet_id)]
+Appointment.pet secondary synchronize pairs []
+Appointment.pet local/remote pairs [(appts.pet_id / pets.id)]
+Appointment.pet remote columns [pets.id]
+Appointment.pet local columns [appts.pet_id]
+Appointment.pet relationship direction RelationshipDirection.MANYTOONE
+Appointment.pet lazy loading clause pets.id = :param_1
+Appointment.pet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop id
+(Appointment|appts) initialize prop pet_id
+(Appointment|appts) initialize prop vet_id
+(Appointment|appts) initialize prop date
+(Appointment|appts) initialize prop time
+(Appointment|appts) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT owners.id AS owners_id, owners.first_name AS owners_first_name, owners.last_name AS owners_last_name, owners.email AS owners_email, owners.phone_number AS owners_phone_number 
+FROM owners 
+WHERE owners.phone_number = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00026s] ('555-9012', 1, 0)
+SELECT pets.id AS pets_id, pets.name AS pets_name, pets.species AS pets_species, pets.owner_id AS pets_owner_id 
+FROM pets 
+WHERE ? = pets.owner_id
+[generated in 0.00031s] (3,)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE ? = appts.pet_id
+[generated in 0.00033s] (3,)
+SELECT vets.id AS vets_id, vets.first_name AS vets_first_name, vets.last_name AS vets_last_name 
+FROM vets 
+WHERE vets.id = ?
+[generated in 0.00023s] (3,)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE ? = appts.pet_id
+[cached since 0.004466s ago] (13,)
+ROLLBACK
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(appts, Relationship)
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(owner, Relationship)
+(Pet|pets) _configure_property(appts, Relationship)
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(vet, Relationship)
+(Appointment|appts) _configure_property(pet, Relationship)
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop pets
+Owner.pets setup primary join owners.id = pets.owner_id
+Owner.pets setup secondary join None
+Owner.pets synchronize pairs [(owners.id => pets.owner_id)]
+Owner.pets secondary synchronize pairs []
+Owner.pets local/remote pairs [(owners.id / pets.owner_id)]
+Owner.pets remote columns [pets.owner_id]
+Owner.pets local columns [owners.id]
+Owner.pets relationship direction RelationshipDirection.ONETOMANY
+Owner.pets lazy loading clause :param_1 = pets.owner_id
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop appts
+Vet.appts setup primary join vets.id = appts.vet_id
+Vet.appts setup secondary join None
+Vet.appts synchronize pairs [(vets.id => appts.vet_id)]
+Vet.appts secondary synchronize pairs []
+Vet.appts local/remote pairs [(vets.id / appts.vet_id)]
+Vet.appts remote columns [appts.vet_id]
+Vet.appts local columns [vets.id]
+Vet.appts relationship direction RelationshipDirection.ONETOMANY
+Vet.appts lazy loading clause :param_1 = appts.vet_id
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop owner
+Pet.owner setup primary join owners.id = pets.owner_id
+Pet.owner setup secondary join None
+Pet.owner synchronize pairs [(owners.id => pets.owner_id)]
+Pet.owner secondary synchronize pairs []
+Pet.owner local/remote pairs [(pets.owner_id / owners.id)]
+Pet.owner remote columns [owners.id]
+Pet.owner local columns [pets.owner_id]
+Pet.owner relationship direction RelationshipDirection.MANYTOONE
+Pet.owner lazy loading clause owners.id = :param_1
+Pet.owner will use Session.get() to optimize instance loads
+(Pet|pets) initialize prop appts
+Pet.appts setup primary join pets.id = appts.pet_id
+Pet.appts setup secondary join None
+Pet.appts synchronize pairs [(pets.id => appts.pet_id)]
+Pet.appts secondary synchronize pairs []
+Pet.appts local/remote pairs [(pets.id / appts.pet_id)]
+Pet.appts remote columns [appts.pet_id]
+Pet.appts local columns [pets.id]
+Pet.appts relationship direction RelationshipDirection.ONETOMANY
+Pet.appts lazy loading clause :param_1 = appts.pet_id
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+(Appointment|appts) _post_configure_properties() started
+(Appointment|appts) initialize prop vet
+Appointment.vet setup primary join vets.id = appts.vet_id
+Appointment.vet setup secondary join None
+Appointment.vet synchronize pairs [(vets.id => appts.vet_id)]
+Appointment.vet secondary synchronize pairs []
+Appointment.vet local/remote pairs [(appts.vet_id / vets.id)]
+Appointment.vet remote columns [vets.id]
+Appointment.vet local columns [appts.vet_id]
+Appointment.vet relationship direction RelationshipDirection.MANYTOONE
+Appointment.vet lazy loading clause vets.id = :param_1
+Appointment.vet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop pet
+Appointment.pet setup primary join pets.id = appts.pet_id
+Appointment.pet setup secondary join None
+Appointment.pet synchronize pairs [(pets.id => appts.pet_id)]
+Appointment.pet secondary synchronize pairs []
+Appointment.pet local/remote pairs [(appts.pet_id / pets.id)]
+Appointment.pet remote columns [pets.id]
+Appointment.pet local columns [appts.pet_id]
+Appointment.pet relationship direction RelationshipDirection.MANYTOONE
+Appointment.pet lazy loading clause pets.id = :param_1
+Appointment.pet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop id
+(Appointment|appts) initialize prop pet_id
+(Appointment|appts) initialize prop vet_id
+(Appointment|appts) initialize prop date
+(Appointment|appts) initialize prop time
+(Appointment|appts) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT owners.id AS owners_id, owners.first_name AS owners_first_name, owners.last_name AS owners_last_name, owners.email AS owners_email, owners.phone_number AS owners_phone_number 
+FROM owners 
+WHERE owners.phone_number = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00037s] ('555-3456', 1, 0)
+SELECT pets.id AS pets_id, pets.name AS pets_name, pets.species AS pets_species, pets.owner_id AS pets_owner_id 
+FROM pets 
+WHERE ? = pets.owner_id
+[generated in 0.00024s] (4,)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE ? = appts.pet_id
+[generated in 0.00026s] (4,)
+SELECT vets.id AS vets_id, vets.first_name AS vets_first_name, vets.last_name AS vets_last_name 
+FROM vets 
+WHERE vets.id = ?
+[generated in 0.00026s] (4,)
+ROLLBACK
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(appts, Relationship)
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(owner, Relationship)
+(Pet|pets) _configure_property(appts, Relationship)
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(vet, Relationship)
+(Appointment|appts) _configure_property(pet, Relationship)
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop pets
+Owner.pets setup primary join owners.id = pets.owner_id
+Owner.pets setup secondary join None
+Owner.pets synchronize pairs [(owners.id => pets.owner_id)]
+Owner.pets secondary synchronize pairs []
+Owner.pets local/remote pairs [(owners.id / pets.owner_id)]
+Owner.pets remote columns [pets.owner_id]
+Owner.pets local columns [owners.id]
+Owner.pets relationship direction RelationshipDirection.ONETOMANY
+Owner.pets lazy loading clause :param_1 = pets.owner_id
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop appts
+Vet.appts setup primary join vets.id = appts.vet_id
+Vet.appts setup secondary join None
+Vet.appts synchronize pairs [(vets.id => appts.vet_id)]
+Vet.appts secondary synchronize pairs []
+Vet.appts local/remote pairs [(vets.id / appts.vet_id)]
+Vet.appts remote columns [appts.vet_id]
+Vet.appts local columns [vets.id]
+Vet.appts relationship direction RelationshipDirection.ONETOMANY
+Vet.appts lazy loading clause :param_1 = appts.vet_id
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop owner
+Pet.owner setup primary join owners.id = pets.owner_id
+Pet.owner setup secondary join None
+Pet.owner synchronize pairs [(owners.id => pets.owner_id)]
+Pet.owner secondary synchronize pairs []
+Pet.owner local/remote pairs [(pets.owner_id / owners.id)]
+Pet.owner remote columns [owners.id]
+Pet.owner local columns [pets.owner_id]
+Pet.owner relationship direction RelationshipDirection.MANYTOONE
+Pet.owner lazy loading clause owners.id = :param_1
+Pet.owner will use Session.get() to optimize instance loads
+(Pet|pets) initialize prop appts
+Pet.appts setup primary join pets.id = appts.pet_id
+Pet.appts setup secondary join None
+Pet.appts synchronize pairs [(pets.id => appts.pet_id)]
+Pet.appts secondary synchronize pairs []
+Pet.appts local/remote pairs [(pets.id / appts.pet_id)]
+Pet.appts remote columns [appts.pet_id]
+Pet.appts local columns [pets.id]
+Pet.appts relationship direction RelationshipDirection.ONETOMANY
+Pet.appts lazy loading clause :param_1 = appts.pet_id
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+(Appointment|appts) _post_configure_properties() started
+(Appointment|appts) initialize prop vet
+Appointment.vet setup primary join vets.id = appts.vet_id
+Appointment.vet setup secondary join None
+Appointment.vet synchronize pairs [(vets.id => appts.vet_id)]
+Appointment.vet secondary synchronize pairs []
+Appointment.vet local/remote pairs [(appts.vet_id / vets.id)]
+Appointment.vet remote columns [vets.id]
+Appointment.vet local columns [appts.vet_id]
+Appointment.vet relationship direction RelationshipDirection.MANYTOONE
+Appointment.vet lazy loading clause vets.id = :param_1
+Appointment.vet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop pet
+Appointment.pet setup primary join pets.id = appts.pet_id
+Appointment.pet setup secondary join None
+Appointment.pet synchronize pairs [(pets.id => appts.pet_id)]
+Appointment.pet secondary synchronize pairs []
+Appointment.pet local/remote pairs [(appts.pet_id / pets.id)]
+Appointment.pet remote columns [pets.id]
+Appointment.pet local columns [appts.pet_id]
+Appointment.pet relationship direction RelationshipDirection.MANYTOONE
+Appointment.pet lazy loading clause pets.id = :param_1
+Appointment.pet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop id
+(Appointment|appts) initialize prop pet_id
+(Appointment|appts) initialize prop vet_id
+(Appointment|appts) initialize prop date
+(Appointment|appts) initialize prop time
+(Appointment|appts) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT owners.id AS owners_id, owners.first_name AS owners_first_name, owners.last_name AS owners_last_name, owners.email AS owners_email, owners.phone_number AS owners_phone_number 
+FROM owners 
+WHERE owners.phone_number = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00026s] ('555-7890', 1, 0)
+SELECT pets.id AS pets_id, pets.name AS pets_name, pets.species AS pets_species, pets.owner_id AS pets_owner_id 
+FROM pets 
+WHERE ? = pets.owner_id
+[generated in 0.00038s] (5,)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE ? = appts.pet_id
+[generated in 0.00030s] (5,)
+SELECT vets.id AS vets_id, vets.first_name AS vets_first_name, vets.last_name AS vets_last_name 
+FROM vets 
+WHERE vets.id = ?
+[generated in 0.00021s] (4,)
+SELECT vets.id AS vets_id, vets.first_name AS vets_first_name, vets.last_name AS vets_last_name 
+FROM vets 
+WHERE vets.id = ?
+[cached since 0.001602s ago] (5,)
+ROLLBACK
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(appts, Relationship)
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(owner, Relationship)
+(Pet|pets) _configure_property(appts, Relationship)
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(vet, Relationship)
+(Appointment|appts) _configure_property(pet, Relationship)
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop pets
+Owner.pets setup primary join owners.id = pets.owner_id
+Owner.pets setup secondary join None
+Owner.pets synchronize pairs [(owners.id => pets.owner_id)]
+Owner.pets secondary synchronize pairs []
+Owner.pets local/remote pairs [(owners.id / pets.owner_id)]
+Owner.pets remote columns [pets.owner_id]
+Owner.pets local columns [owners.id]
+Owner.pets relationship direction RelationshipDirection.ONETOMANY
+Owner.pets lazy loading clause :param_1 = pets.owner_id
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop appts
+Vet.appts setup primary join vets.id = appts.vet_id
+Vet.appts setup secondary join None
+Vet.appts synchronize pairs [(vets.id => appts.vet_id)]
+Vet.appts secondary synchronize pairs []
+Vet.appts local/remote pairs [(vets.id / appts.vet_id)]
+Vet.appts remote columns [appts.vet_id]
+Vet.appts local columns [vets.id]
+Vet.appts relationship direction RelationshipDirection.ONETOMANY
+Vet.appts lazy loading clause :param_1 = appts.vet_id
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop owner
+Pet.owner setup primary join owners.id = pets.owner_id
+Pet.owner setup secondary join None
+Pet.owner synchronize pairs [(owners.id => pets.owner_id)]
+Pet.owner secondary synchronize pairs []
+Pet.owner local/remote pairs [(pets.owner_id / owners.id)]
+Pet.owner remote columns [owners.id]
+Pet.owner local columns [pets.owner_id]
+Pet.owner relationship direction RelationshipDirection.MANYTOONE
+Pet.owner lazy loading clause owners.id = :param_1
+Pet.owner will use Session.get() to optimize instance loads
+(Pet|pets) initialize prop appts
+Pet.appts setup primary join pets.id = appts.pet_id
+Pet.appts setup secondary join None
+Pet.appts synchronize pairs [(pets.id => appts.pet_id)]
+Pet.appts secondary synchronize pairs []
+Pet.appts local/remote pairs [(pets.id / appts.pet_id)]
+Pet.appts remote columns [appts.pet_id]
+Pet.appts local columns [pets.id]
+Pet.appts relationship direction RelationshipDirection.ONETOMANY
+Pet.appts lazy loading clause :param_1 = appts.pet_id
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+(Appointment|appts) _post_configure_properties() started
+(Appointment|appts) initialize prop vet
+Appointment.vet setup primary join vets.id = appts.vet_id
+Appointment.vet setup secondary join None
+Appointment.vet synchronize pairs [(vets.id => appts.vet_id)]
+Appointment.vet secondary synchronize pairs []
+Appointment.vet local/remote pairs [(appts.vet_id / vets.id)]
+Appointment.vet remote columns [vets.id]
+Appointment.vet local columns [appts.vet_id]
+Appointment.vet relationship direction RelationshipDirection.MANYTOONE
+Appointment.vet lazy loading clause vets.id = :param_1
+Appointment.vet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop pet
+Appointment.pet setup primary join pets.id = appts.pet_id
+Appointment.pet setup secondary join None
+Appointment.pet synchronize pairs [(pets.id => appts.pet_id)]
+Appointment.pet secondary synchronize pairs []
+Appointment.pet local/remote pairs [(appts.pet_id / pets.id)]
+Appointment.pet remote columns [pets.id]
+Appointment.pet local columns [appts.pet_id]
+Appointment.pet relationship direction RelationshipDirection.MANYTOONE
+Appointment.pet lazy loading clause pets.id = :param_1
+Appointment.pet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop id
+(Appointment|appts) initialize prop pet_id
+(Appointment|appts) initialize prop vet_id
+(Appointment|appts) initialize prop date
+(Appointment|appts) initialize prop time
+(Appointment|appts) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT vets.id AS vets_id, vets.first_name AS vets_first_name, vets.last_name AS vets_last_name 
+FROM vets
+[generated in 0.00013s] ()
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE ? = appts.vet_id
+[generated in 0.00013s] (1,)
+ROLLBACK
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(appts, Relationship)
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(owner, Relationship)
+(Pet|pets) _configure_property(appts, Relationship)
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(vet, Relationship)
+(Appointment|appts) _configure_property(pet, Relationship)
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop pets
+Owner.pets setup primary join owners.id = pets.owner_id
+Owner.pets setup secondary join None
+Owner.pets synchronize pairs [(owners.id => pets.owner_id)]
+Owner.pets secondary synchronize pairs []
+Owner.pets local/remote pairs [(owners.id / pets.owner_id)]
+Owner.pets remote columns [pets.owner_id]
+Owner.pets local columns [owners.id]
+Owner.pets relationship direction RelationshipDirection.ONETOMANY
+Owner.pets lazy loading clause :param_1 = pets.owner_id
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop appts
+Vet.appts setup primary join vets.id = appts.vet_id
+Vet.appts setup secondary join None
+Vet.appts synchronize pairs [(vets.id => appts.vet_id)]
+Vet.appts secondary synchronize pairs []
+Vet.appts local/remote pairs [(vets.id / appts.vet_id)]
+Vet.appts remote columns [appts.vet_id]
+Vet.appts local columns [vets.id]
+Vet.appts relationship direction RelationshipDirection.ONETOMANY
+Vet.appts lazy loading clause :param_1 = appts.vet_id
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop owner
+Pet.owner setup primary join owners.id = pets.owner_id
+Pet.owner setup secondary join None
+Pet.owner synchronize pairs [(owners.id => pets.owner_id)]
+Pet.owner secondary synchronize pairs []
+Pet.owner local/remote pairs [(pets.owner_id / owners.id)]
+Pet.owner remote columns [owners.id]
+Pet.owner local columns [pets.owner_id]
+Pet.owner relationship direction RelationshipDirection.MANYTOONE
+Pet.owner lazy loading clause owners.id = :param_1
+Pet.owner will use Session.get() to optimize instance loads
+(Pet|pets) initialize prop appts
+Pet.appts setup primary join pets.id = appts.pet_id
+Pet.appts setup secondary join None
+Pet.appts synchronize pairs [(pets.id => appts.pet_id)]
+Pet.appts secondary synchronize pairs []
+Pet.appts local/remote pairs [(pets.id / appts.pet_id)]
+Pet.appts remote columns [appts.pet_id]
+Pet.appts local columns [pets.id]
+Pet.appts relationship direction RelationshipDirection.ONETOMANY
+Pet.appts lazy loading clause :param_1 = appts.pet_id
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+(Appointment|appts) _post_configure_properties() started
+(Appointment|appts) initialize prop vet
+Appointment.vet setup primary join vets.id = appts.vet_id
+Appointment.vet setup secondary join None
+Appointment.vet synchronize pairs [(vets.id => appts.vet_id)]
+Appointment.vet secondary synchronize pairs []
+Appointment.vet local/remote pairs [(appts.vet_id / vets.id)]
+Appointment.vet remote columns [vets.id]
+Appointment.vet local columns [appts.vet_id]
+Appointment.vet relationship direction RelationshipDirection.MANYTOONE
+Appointment.vet lazy loading clause vets.id = :param_1
+Appointment.vet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop pet
+Appointment.pet setup primary join pets.id = appts.pet_id
+Appointment.pet setup secondary join None
+Appointment.pet synchronize pairs [(pets.id => appts.pet_id)]
+Appointment.pet secondary synchronize pairs []
+Appointment.pet local/remote pairs [(appts.pet_id / pets.id)]
+Appointment.pet remote columns [pets.id]
+Appointment.pet local columns [appts.pet_id]
+Appointment.pet relationship direction RelationshipDirection.MANYTOONE
+Appointment.pet lazy loading clause pets.id = :param_1
+Appointment.pet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop id
+(Appointment|appts) initialize prop pet_id
+(Appointment|appts) initialize prop vet_id
+(Appointment|appts) initialize prop date
+(Appointment|appts) initialize prop time
+(Appointment|appts) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT pets.id AS pets_id, pets.name AS pets_name, pets.species AS pets_species, pets.owner_id AS pets_owner_id 
+FROM pets 
+WHERE pets.name = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00023s] ('Buddy', 1, 0)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE appts.pet_id = ? AND appts.date = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00017s] (1, '2023-02-15', 1, 0)
+SELECT vets.id AS vets_id, vets.first_name AS vets_first_name, vets.last_name AS vets_last_name 
+FROM vets 
+WHERE vets.id = ?
+[generated in 0.00024s] (1,)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE ? = appts.vet_id
+[generated in 0.00037s] (1,)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE appts.vet_id = ? AND appts.date = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00048s] (1, '2023-02-18', 1, 0)
+UPDATE appts SET pet_id=? WHERE appts.id = ?
+[generated in 0.00046s] [(None, 1), (1, 6)]
+COMMIT
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(appts, Relationship)
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(owner, Relationship)
+(Pet|pets) _configure_property(appts, Relationship)
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(vet, Relationship)
+(Appointment|appts) _configure_property(pet, Relationship)
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop pets
+Owner.pets setup primary join owners.id = pets.owner_id
+Owner.pets setup secondary join None
+Owner.pets synchronize pairs [(owners.id => pets.owner_id)]
+Owner.pets secondary synchronize pairs []
+Owner.pets local/remote pairs [(owners.id / pets.owner_id)]
+Owner.pets remote columns [pets.owner_id]
+Owner.pets local columns [owners.id]
+Owner.pets relationship direction RelationshipDirection.ONETOMANY
+Owner.pets lazy loading clause :param_1 = pets.owner_id
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop appts
+Vet.appts setup primary join vets.id = appts.vet_id
+Vet.appts setup secondary join None
+Vet.appts synchronize pairs [(vets.id => appts.vet_id)]
+Vet.appts secondary synchronize pairs []
+Vet.appts local/remote pairs [(vets.id / appts.vet_id)]
+Vet.appts remote columns [appts.vet_id]
+Vet.appts local columns [vets.id]
+Vet.appts relationship direction RelationshipDirection.ONETOMANY
+Vet.appts lazy loading clause :param_1 = appts.vet_id
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop owner
+Pet.owner setup primary join owners.id = pets.owner_id
+Pet.owner setup secondary join None
+Pet.owner synchronize pairs [(owners.id => pets.owner_id)]
+Pet.owner secondary synchronize pairs []
+Pet.owner local/remote pairs [(pets.owner_id / owners.id)]
+Pet.owner remote columns [owners.id]
+Pet.owner local columns [pets.owner_id]
+Pet.owner relationship direction RelationshipDirection.MANYTOONE
+Pet.owner lazy loading clause owners.id = :param_1
+Pet.owner will use Session.get() to optimize instance loads
+(Pet|pets) initialize prop appts
+Pet.appts setup primary join pets.id = appts.pet_id
+Pet.appts setup secondary join None
+Pet.appts synchronize pairs [(pets.id => appts.pet_id)]
+Pet.appts secondary synchronize pairs []
+Pet.appts local/remote pairs [(pets.id / appts.pet_id)]
+Pet.appts remote columns [appts.pet_id]
+Pet.appts local columns [pets.id]
+Pet.appts relationship direction RelationshipDirection.ONETOMANY
+Pet.appts lazy loading clause :param_1 = appts.pet_id
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+(Appointment|appts) _post_configure_properties() started
+(Appointment|appts) initialize prop vet
+Appointment.vet setup primary join vets.id = appts.vet_id
+Appointment.vet setup secondary join None
+Appointment.vet synchronize pairs [(vets.id => appts.vet_id)]
+Appointment.vet secondary synchronize pairs []
+Appointment.vet local/remote pairs [(appts.vet_id / vets.id)]
+Appointment.vet remote columns [vets.id]
+Appointment.vet local columns [appts.vet_id]
+Appointment.vet relationship direction RelationshipDirection.MANYTOONE
+Appointment.vet lazy loading clause vets.id = :param_1
+Appointment.vet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop pet
+Appointment.pet setup primary join pets.id = appts.pet_id
+Appointment.pet setup secondary join None
+Appointment.pet synchronize pairs [(pets.id => appts.pet_id)]
+Appointment.pet secondary synchronize pairs []
+Appointment.pet local/remote pairs [(appts.pet_id / pets.id)]
+Appointment.pet remote columns [pets.id]
+Appointment.pet local columns [appts.pet_id]
+Appointment.pet relationship direction RelationshipDirection.MANYTOONE
+Appointment.pet lazy loading clause pets.id = :param_1
+Appointment.pet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop id
+(Appointment|appts) initialize prop pet_id
+(Appointment|appts) initialize prop vet_id
+(Appointment|appts) initialize prop date
+(Appointment|appts) initialize prop time
+(Appointment|appts) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT pets.id AS pets_id, pets.name AS pets_name, pets.species AS pets_species, pets.owner_id AS pets_owner_id 
+FROM pets 
+WHERE pets.name = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00037s] ('Buddy', 1, 0)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE appts.pet_id = ? AND appts.date = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00028s] (1, '2023-02-18', 1, 0)
+SELECT vets.id AS vets_id, vets.first_name AS vets_first_name, vets.last_name AS vets_last_name 
+FROM vets 
+WHERE vets.id = ?
+[generated in 0.00031s] (1,)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE ? = appts.vet_id
+[generated in 0.00035s] (1,)
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(appts, Relationship)
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(owner, Relationship)
+(Pet|pets) _configure_property(appts, Relationship)
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(vet, Relationship)
+(Appointment|appts) _configure_property(pet, Relationship)
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop pets
+Owner.pets setup primary join owners.id = pets.owner_id
+Owner.pets setup secondary join None
+Owner.pets synchronize pairs [(owners.id => pets.owner_id)]
+Owner.pets secondary synchronize pairs []
+Owner.pets local/remote pairs [(owners.id / pets.owner_id)]
+Owner.pets remote columns [pets.owner_id]
+Owner.pets local columns [owners.id]
+Owner.pets relationship direction RelationshipDirection.ONETOMANY
+Owner.pets lazy loading clause :param_1 = pets.owner_id
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop appts
+Vet.appts setup primary join vets.id = appts.vet_id
+Vet.appts setup secondary join None
+Vet.appts synchronize pairs [(vets.id => appts.vet_id)]
+Vet.appts secondary synchronize pairs []
+Vet.appts local/remote pairs [(vets.id / appts.vet_id)]
+Vet.appts remote columns [appts.vet_id]
+Vet.appts local columns [vets.id]
+Vet.appts relationship direction RelationshipDirection.ONETOMANY
+Vet.appts lazy loading clause :param_1 = appts.vet_id
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop owner
+Pet.owner setup primary join owners.id = pets.owner_id
+Pet.owner setup secondary join None
+Pet.owner synchronize pairs [(owners.id => pets.owner_id)]
+Pet.owner secondary synchronize pairs []
+Pet.owner local/remote pairs [(pets.owner_id / owners.id)]
+Pet.owner remote columns [owners.id]
+Pet.owner local columns [pets.owner_id]
+Pet.owner relationship direction RelationshipDirection.MANYTOONE
+Pet.owner lazy loading clause owners.id = :param_1
+Pet.owner will use Session.get() to optimize instance loads
+(Pet|pets) initialize prop appts
+Pet.appts setup primary join pets.id = appts.pet_id
+Pet.appts setup secondary join None
+Pet.appts synchronize pairs [(pets.id => appts.pet_id)]
+Pet.appts secondary synchronize pairs []
+Pet.appts local/remote pairs [(pets.id / appts.pet_id)]
+Pet.appts remote columns [appts.pet_id]
+Pet.appts local columns [pets.id]
+Pet.appts relationship direction RelationshipDirection.ONETOMANY
+Pet.appts lazy loading clause :param_1 = appts.pet_id
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+(Appointment|appts) _post_configure_properties() started
+(Appointment|appts) initialize prop vet
+Appointment.vet setup primary join vets.id = appts.vet_id
+Appointment.vet setup secondary join None
+Appointment.vet synchronize pairs [(vets.id => appts.vet_id)]
+Appointment.vet secondary synchronize pairs []
+Appointment.vet local/remote pairs [(appts.vet_id / vets.id)]
+Appointment.vet remote columns [vets.id]
+Appointment.vet local columns [appts.vet_id]
+Appointment.vet relationship direction RelationshipDirection.MANYTOONE
+Appointment.vet lazy loading clause vets.id = :param_1
+Appointment.vet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop pet
+Appointment.pet setup primary join pets.id = appts.pet_id
+Appointment.pet setup secondary join None
+Appointment.pet synchronize pairs [(pets.id => appts.pet_id)]
+Appointment.pet secondary synchronize pairs []
+Appointment.pet local/remote pairs [(appts.pet_id / pets.id)]
+Appointment.pet remote columns [pets.id]
+Appointment.pet local columns [appts.pet_id]
+Appointment.pet relationship direction RelationshipDirection.MANYTOONE
+Appointment.pet lazy loading clause pets.id = :param_1
+Appointment.pet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop id
+(Appointment|appts) initialize prop pet_id
+(Appointment|appts) initialize prop vet_id
+(Appointment|appts) initialize prop date
+(Appointment|appts) initialize prop time
+(Appointment|appts) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT pets.id AS pets_id, pets.name AS pets_name, pets.species AS pets_species, pets.owner_id AS pets_owner_id 
+FROM pets 
+WHERE pets.name = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00036s] ('Buddy', 1, 0)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE appts.pet_id = ? AND appts.date = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00031s] (1, '2023-02-18', 1, 0)
+SELECT vets.id AS vets_id, vets.first_name AS vets_first_name, vets.last_name AS vets_last_name 
+FROM vets 
+WHERE vets.id = ?
+[generated in 0.00028s] (1,)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE ? = appts.vet_id
+[generated in 0.00023s] (1,)
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(appts, Relationship)
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(owner, Relationship)
+(Pet|pets) _configure_property(appts, Relationship)
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(vet, Relationship)
+(Appointment|appts) _configure_property(pet, Relationship)
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop pets
+Owner.pets setup primary join owners.id = pets.owner_id
+Owner.pets setup secondary join None
+Owner.pets synchronize pairs [(owners.id => pets.owner_id)]
+Owner.pets secondary synchronize pairs []
+Owner.pets local/remote pairs [(owners.id / pets.owner_id)]
+Owner.pets remote columns [pets.owner_id]
+Owner.pets local columns [owners.id]
+Owner.pets relationship direction RelationshipDirection.ONETOMANY
+Owner.pets lazy loading clause :param_1 = pets.owner_id
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop appts
+Vet.appts setup primary join vets.id = appts.vet_id
+Vet.appts setup secondary join None
+Vet.appts synchronize pairs [(vets.id => appts.vet_id)]
+Vet.appts secondary synchronize pairs []
+Vet.appts local/remote pairs [(vets.id / appts.vet_id)]
+Vet.appts remote columns [appts.vet_id]
+Vet.appts local columns [vets.id]
+Vet.appts relationship direction RelationshipDirection.ONETOMANY
+Vet.appts lazy loading clause :param_1 = appts.vet_id
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop owner
+Pet.owner setup primary join owners.id = pets.owner_id
+Pet.owner setup secondary join None
+Pet.owner synchronize pairs [(owners.id => pets.owner_id)]
+Pet.owner secondary synchronize pairs []
+Pet.owner local/remote pairs [(pets.owner_id / owners.id)]
+Pet.owner remote columns [owners.id]
+Pet.owner local columns [pets.owner_id]
+Pet.owner relationship direction RelationshipDirection.MANYTOONE
+Pet.owner lazy loading clause owners.id = :param_1
+Pet.owner will use Session.get() to optimize instance loads
+(Pet|pets) initialize prop appts
+Pet.appts setup primary join pets.id = appts.pet_id
+Pet.appts setup secondary join None
+Pet.appts synchronize pairs [(pets.id => appts.pet_id)]
+Pet.appts secondary synchronize pairs []
+Pet.appts local/remote pairs [(pets.id / appts.pet_id)]
+Pet.appts remote columns [appts.pet_id]
+Pet.appts local columns [pets.id]
+Pet.appts relationship direction RelationshipDirection.ONETOMANY
+Pet.appts lazy loading clause :param_1 = appts.pet_id
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+(Appointment|appts) _post_configure_properties() started
+(Appointment|appts) initialize prop vet
+Appointment.vet setup primary join vets.id = appts.vet_id
+Appointment.vet setup secondary join None
+Appointment.vet synchronize pairs [(vets.id => appts.vet_id)]
+Appointment.vet secondary synchronize pairs []
+Appointment.vet local/remote pairs [(appts.vet_id / vets.id)]
+Appointment.vet remote columns [vets.id]
+Appointment.vet local columns [appts.vet_id]
+Appointment.vet relationship direction RelationshipDirection.MANYTOONE
+Appointment.vet lazy loading clause vets.id = :param_1
+Appointment.vet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop pet
+Appointment.pet setup primary join pets.id = appts.pet_id
+Appointment.pet setup secondary join None
+Appointment.pet synchronize pairs [(pets.id => appts.pet_id)]
+Appointment.pet secondary synchronize pairs []
+Appointment.pet local/remote pairs [(appts.pet_id / pets.id)]
+Appointment.pet remote columns [pets.id]
+Appointment.pet local columns [appts.pet_id]
+Appointment.pet relationship direction RelationshipDirection.MANYTOONE
+Appointment.pet lazy loading clause pets.id = :param_1
+Appointment.pet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop id
+(Appointment|appts) initialize prop pet_id
+(Appointment|appts) initialize prop vet_id
+(Appointment|appts) initialize prop date
+(Appointment|appts) initialize prop time
+(Appointment|appts) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT pets.id AS pets_id, pets.name AS pets_name, pets.species AS pets_species, pets.owner_id AS pets_owner_id 
+FROM pets 
+WHERE pets.name = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00029s] ('Buddy', 1, 0)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE appts.pet_id = ? AND appts.date = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00028s] (1, '2023-02-18', 1, 0)
+SELECT vets.id AS vets_id, vets.first_name AS vets_first_name, vets.last_name AS vets_last_name 
+FROM vets 
+WHERE vets.id = ?
+[generated in 0.00026s] (1,)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE ? = appts.vet_id
+[generated in 0.00038s] (1,)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE appts.vet_id = ? AND appts.date = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00041s] (1, '2023-02-15', 1, 0)
+UPDATE appts SET pet_id=? WHERE appts.id = ?
+[generated in 0.00038s] (1, 1)
+COMMIT
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(appts, Relationship)
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(owner, Relationship)
+(Pet|pets) _configure_property(appts, Relationship)
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(vet, Relationship)
+(Appointment|appts) _configure_property(pet, Relationship)
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop pets
+Owner.pets setup primary join owners.id = pets.owner_id
+Owner.pets setup secondary join None
+Owner.pets synchronize pairs [(owners.id => pets.owner_id)]
+Owner.pets secondary synchronize pairs []
+Owner.pets local/remote pairs [(owners.id / pets.owner_id)]
+Owner.pets remote columns [pets.owner_id]
+Owner.pets local columns [owners.id]
+Owner.pets relationship direction RelationshipDirection.ONETOMANY
+Owner.pets lazy loading clause :param_1 = pets.owner_id
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop appts
+Vet.appts setup primary join vets.id = appts.vet_id
+Vet.appts setup secondary join None
+Vet.appts synchronize pairs [(vets.id => appts.vet_id)]
+Vet.appts secondary synchronize pairs []
+Vet.appts local/remote pairs [(vets.id / appts.vet_id)]
+Vet.appts remote columns [appts.vet_id]
+Vet.appts local columns [vets.id]
+Vet.appts relationship direction RelationshipDirection.ONETOMANY
+Vet.appts lazy loading clause :param_1 = appts.vet_id
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop owner
+Pet.owner setup primary join owners.id = pets.owner_id
+Pet.owner setup secondary join None
+Pet.owner synchronize pairs [(owners.id => pets.owner_id)]
+Pet.owner secondary synchronize pairs []
+Pet.owner local/remote pairs [(pets.owner_id / owners.id)]
+Pet.owner remote columns [owners.id]
+Pet.owner local columns [pets.owner_id]
+Pet.owner relationship direction RelationshipDirection.MANYTOONE
+Pet.owner lazy loading clause owners.id = :param_1
+Pet.owner will use Session.get() to optimize instance loads
+(Pet|pets) initialize prop appts
+Pet.appts setup primary join pets.id = appts.pet_id
+Pet.appts setup secondary join None
+Pet.appts synchronize pairs [(pets.id => appts.pet_id)]
+Pet.appts secondary synchronize pairs []
+Pet.appts local/remote pairs [(pets.id / appts.pet_id)]
+Pet.appts remote columns [appts.pet_id]
+Pet.appts local columns [pets.id]
+Pet.appts relationship direction RelationshipDirection.ONETOMANY
+Pet.appts lazy loading clause :param_1 = appts.pet_id
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+(Appointment|appts) _post_configure_properties() started
+(Appointment|appts) initialize prop vet
+Appointment.vet setup primary join vets.id = appts.vet_id
+Appointment.vet setup secondary join None
+Appointment.vet synchronize pairs [(vets.id => appts.vet_id)]
+Appointment.vet secondary synchronize pairs []
+Appointment.vet local/remote pairs [(appts.vet_id / vets.id)]
+Appointment.vet remote columns [vets.id]
+Appointment.vet local columns [appts.vet_id]
+Appointment.vet relationship direction RelationshipDirection.MANYTOONE
+Appointment.vet lazy loading clause vets.id = :param_1
+Appointment.vet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop pet
+Appointment.pet setup primary join pets.id = appts.pet_id
+Appointment.pet setup secondary join None
+Appointment.pet synchronize pairs [(pets.id => appts.pet_id)]
+Appointment.pet secondary synchronize pairs []
+Appointment.pet local/remote pairs [(appts.pet_id / pets.id)]
+Appointment.pet remote columns [pets.id]
+Appointment.pet local columns [appts.pet_id]
+Appointment.pet relationship direction RelationshipDirection.MANYTOONE
+Appointment.pet lazy loading clause pets.id = :param_1
+Appointment.pet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop id
+(Appointment|appts) initialize prop pet_id
+(Appointment|appts) initialize prop vet_id
+(Appointment|appts) initialize prop date
+(Appointment|appts) initialize prop time
+(Appointment|appts) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT pets.id AS pets_id, pets.name AS pets_name, pets.species AS pets_species, pets.owner_id AS pets_owner_id 
+FROM pets 
+WHERE pets.name = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00034s] ('Buddy', 1, 0)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE appts.pet_id = ? AND appts.date = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00034s] (1, '2023-02-15', 1, 0)
+SELECT vets.id AS vets_id, vets.first_name AS vets_first_name, vets.last_name AS vets_last_name 
+FROM vets 
+WHERE vets.id = ?
+[generated in 0.00027s] (1,)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE ? = appts.vet_id
+[generated in 0.00039s] (1,)
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(appts, Relationship)
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(owner, Relationship)
+(Pet|pets) _configure_property(appts, Relationship)
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(vet, Relationship)
+(Appointment|appts) _configure_property(pet, Relationship)
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop pets
+Owner.pets setup primary join owners.id = pets.owner_id
+Owner.pets setup secondary join None
+Owner.pets synchronize pairs [(owners.id => pets.owner_id)]
+Owner.pets secondary synchronize pairs []
+Owner.pets local/remote pairs [(owners.id / pets.owner_id)]
+Owner.pets remote columns [pets.owner_id]
+Owner.pets local columns [owners.id]
+Owner.pets relationship direction RelationshipDirection.ONETOMANY
+Owner.pets lazy loading clause :param_1 = pets.owner_id
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop appts
+Vet.appts setup primary join vets.id = appts.vet_id
+Vet.appts setup secondary join None
+Vet.appts synchronize pairs [(vets.id => appts.vet_id)]
+Vet.appts secondary synchronize pairs []
+Vet.appts local/remote pairs [(vets.id / appts.vet_id)]
+Vet.appts remote columns [appts.vet_id]
+Vet.appts local columns [vets.id]
+Vet.appts relationship direction RelationshipDirection.ONETOMANY
+Vet.appts lazy loading clause :param_1 = appts.vet_id
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop owner
+Pet.owner setup primary join owners.id = pets.owner_id
+Pet.owner setup secondary join None
+Pet.owner synchronize pairs [(owners.id => pets.owner_id)]
+Pet.owner secondary synchronize pairs []
+Pet.owner local/remote pairs [(pets.owner_id / owners.id)]
+Pet.owner remote columns [owners.id]
+Pet.owner local columns [pets.owner_id]
+Pet.owner relationship direction RelationshipDirection.MANYTOONE
+Pet.owner lazy loading clause owners.id = :param_1
+Pet.owner will use Session.get() to optimize instance loads
+(Pet|pets) initialize prop appts
+Pet.appts setup primary join pets.id = appts.pet_id
+Pet.appts setup secondary join None
+Pet.appts synchronize pairs [(pets.id => appts.pet_id)]
+Pet.appts secondary synchronize pairs []
+Pet.appts local/remote pairs [(pets.id / appts.pet_id)]
+Pet.appts remote columns [appts.pet_id]
+Pet.appts local columns [pets.id]
+Pet.appts relationship direction RelationshipDirection.ONETOMANY
+Pet.appts lazy loading clause :param_1 = appts.pet_id
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+(Appointment|appts) _post_configure_properties() started
+(Appointment|appts) initialize prop vet
+Appointment.vet setup primary join vets.id = appts.vet_id
+Appointment.vet setup secondary join None
+Appointment.vet synchronize pairs [(vets.id => appts.vet_id)]
+Appointment.vet secondary synchronize pairs []
+Appointment.vet local/remote pairs [(appts.vet_id / vets.id)]
+Appointment.vet remote columns [vets.id]
+Appointment.vet local columns [appts.vet_id]
+Appointment.vet relationship direction RelationshipDirection.MANYTOONE
+Appointment.vet lazy loading clause vets.id = :param_1
+Appointment.vet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop pet
+Appointment.pet setup primary join pets.id = appts.pet_id
+Appointment.pet setup secondary join None
+Appointment.pet synchronize pairs [(pets.id => appts.pet_id)]
+Appointment.pet secondary synchronize pairs []
+Appointment.pet local/remote pairs [(appts.pet_id / pets.id)]
+Appointment.pet remote columns [pets.id]
+Appointment.pet local columns [appts.pet_id]
+Appointment.pet relationship direction RelationshipDirection.MANYTOONE
+Appointment.pet lazy loading clause pets.id = :param_1
+Appointment.pet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop id
+(Appointment|appts) initialize prop pet_id
+(Appointment|appts) initialize prop vet_id
+(Appointment|appts) initialize prop date
+(Appointment|appts) initialize prop time
+(Appointment|appts) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT pets.id AS pets_id, pets.name AS pets_name, pets.species AS pets_species, pets.owner_id AS pets_owner_id 
+FROM pets 
+WHERE pets.name = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00030s] ('Buddy', 1, 0)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE appts.pet_id = ? AND appts.date = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00032s] (1, '2023-02-15', 1, 0)
+SELECT vets.id AS vets_id, vets.first_name AS vets_first_name, vets.last_name AS vets_last_name 
+FROM vets 
+WHERE vets.id = ?
+[generated in 0.00028s] (1,)
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(appts, Relationship)
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(owner, Relationship)
+(Pet|pets) _configure_property(appts, Relationship)
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(vet, Relationship)
+(Appointment|appts) _configure_property(pet, Relationship)
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop pets
+Owner.pets setup primary join owners.id = pets.owner_id
+Owner.pets setup secondary join None
+Owner.pets synchronize pairs [(owners.id => pets.owner_id)]
+Owner.pets secondary synchronize pairs []
+Owner.pets local/remote pairs [(owners.id / pets.owner_id)]
+Owner.pets remote columns [pets.owner_id]
+Owner.pets local columns [owners.id]
+Owner.pets relationship direction RelationshipDirection.ONETOMANY
+Owner.pets lazy loading clause :param_1 = pets.owner_id
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop appts
+Vet.appts setup primary join vets.id = appts.vet_id
+Vet.appts setup secondary join None
+Vet.appts synchronize pairs [(vets.id => appts.vet_id)]
+Vet.appts secondary synchronize pairs []
+Vet.appts local/remote pairs [(vets.id / appts.vet_id)]
+Vet.appts remote columns [appts.vet_id]
+Vet.appts local columns [vets.id]
+Vet.appts relationship direction RelationshipDirection.ONETOMANY
+Vet.appts lazy loading clause :param_1 = appts.vet_id
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop owner
+Pet.owner setup primary join owners.id = pets.owner_id
+Pet.owner setup secondary join None
+Pet.owner synchronize pairs [(owners.id => pets.owner_id)]
+Pet.owner secondary synchronize pairs []
+Pet.owner local/remote pairs [(pets.owner_id / owners.id)]
+Pet.owner remote columns [owners.id]
+Pet.owner local columns [pets.owner_id]
+Pet.owner relationship direction RelationshipDirection.MANYTOONE
+Pet.owner lazy loading clause owners.id = :param_1
+Pet.owner will use Session.get() to optimize instance loads
+(Pet|pets) initialize prop appts
+Pet.appts setup primary join pets.id = appts.pet_id
+Pet.appts setup secondary join None
+Pet.appts synchronize pairs [(pets.id => appts.pet_id)]
+Pet.appts secondary synchronize pairs []
+Pet.appts local/remote pairs [(pets.id / appts.pet_id)]
+Pet.appts remote columns [appts.pet_id]
+Pet.appts local columns [pets.id]
+Pet.appts relationship direction RelationshipDirection.ONETOMANY
+Pet.appts lazy loading clause :param_1 = appts.pet_id
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+(Appointment|appts) _post_configure_properties() started
+(Appointment|appts) initialize prop vet
+Appointment.vet setup primary join vets.id = appts.vet_id
+Appointment.vet setup secondary join None
+Appointment.vet synchronize pairs [(vets.id => appts.vet_id)]
+Appointment.vet secondary synchronize pairs []
+Appointment.vet local/remote pairs [(appts.vet_id / vets.id)]
+Appointment.vet remote columns [vets.id]
+Appointment.vet local columns [appts.vet_id]
+Appointment.vet relationship direction RelationshipDirection.MANYTOONE
+Appointment.vet lazy loading clause vets.id = :param_1
+Appointment.vet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop pet
+Appointment.pet setup primary join pets.id = appts.pet_id
+Appointment.pet setup secondary join None
+Appointment.pet synchronize pairs [(pets.id => appts.pet_id)]
+Appointment.pet secondary synchronize pairs []
+Appointment.pet local/remote pairs [(appts.pet_id / pets.id)]
+Appointment.pet remote columns [pets.id]
+Appointment.pet local columns [appts.pet_id]
+Appointment.pet relationship direction RelationshipDirection.MANYTOONE
+Appointment.pet lazy loading clause pets.id = :param_1
+Appointment.pet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop id
+(Appointment|appts) initialize prop pet_id
+(Appointment|appts) initialize prop vet_id
+(Appointment|appts) initialize prop date
+(Appointment|appts) initialize prop time
+(Appointment|appts) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT pets.id AS pets_id, pets.name AS pets_name, pets.species AS pets_species, pets.owner_id AS pets_owner_id 
+FROM pets 
+WHERE pets.name = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00026s] ('Buddy', 1, 0)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE appts.pet_id = ? AND appts.date = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00023s] (1, '2023-02-15', 1, 0)
+SELECT vets.id AS vets_id, vets.first_name AS vets_first_name, vets.last_name AS vets_last_name 
+FROM vets 
+WHERE vets.id = ?
+[generated in 0.00025s] (1,)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE ? = appts.vet_id
+[generated in 0.00044s] (1,)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE appts.vet_id = ? AND appts.date = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00044s] (1, '2023-02-18', 1, 0)
+UPDATE appts SET pet_id=? WHERE appts.id = ?
+[generated in 0.00047s] [(None, 1), (1, 6)]
+COMMIT
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(appts, Relationship)
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(owner, Relationship)
+(Pet|pets) _configure_property(appts, Relationship)
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(pet, Relationship)
+(Appointment|appts) _configure_property(vet, Relationship)
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(appts, Relationship)
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(owner, Relationship)
+(Pet|pets) _configure_property(appts, Relationship)
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(pet, Relationship)
+(Appointment|appts) _configure_property(vet, Relationship)
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(appts, Relationship)
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(owner, Relationship)
+(Pet|pets) _configure_property(appts, Relationship)
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(pet, Relationship)
+(Appointment|appts) _configure_property(vet, Relationship)
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop pets
+Owner.pets setup primary join owners.id = pets.owner_id
+Owner.pets setup secondary join None
+Owner.pets synchronize pairs [(owners.id => pets.owner_id)]
+Owner.pets secondary synchronize pairs []
+Owner.pets local/remote pairs [(owners.id / pets.owner_id)]
+Owner.pets remote columns [pets.owner_id]
+Owner.pets local columns [owners.id]
+Owner.pets relationship direction RelationshipDirection.ONETOMANY
+Owner.pets lazy loading clause :param_1 = pets.owner_id
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop appts
+Vet.appts setup primary join vets.id = appts.vet_id
+Vet.appts setup secondary join None
+Vet.appts synchronize pairs [(vets.id => appts.vet_id)]
+Vet.appts secondary synchronize pairs []
+Vet.appts local/remote pairs [(vets.id / appts.vet_id)]
+Vet.appts remote columns [appts.vet_id]
+Vet.appts local columns [vets.id]
+Vet.appts relationship direction RelationshipDirection.ONETOMANY
+Vet.appts lazy loading clause :param_1 = appts.vet_id
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop owner
+Pet.owner setup primary join owners.id = pets.owner_id
+Pet.owner setup secondary join None
+Pet.owner synchronize pairs [(owners.id => pets.owner_id)]
+Pet.owner secondary synchronize pairs []
+Pet.owner local/remote pairs [(pets.owner_id / owners.id)]
+Pet.owner remote columns [owners.id]
+Pet.owner local columns [pets.owner_id]
+Pet.owner relationship direction RelationshipDirection.MANYTOONE
+Pet.owner lazy loading clause owners.id = :param_1
+Pet.owner will use Session.get() to optimize instance loads
+(Pet|pets) initialize prop appts
+Pet.appts setup primary join pets.id = appts.pet_id
+Pet.appts setup secondary join None
+Pet.appts synchronize pairs [(pets.id => appts.pet_id)]
+Pet.appts secondary synchronize pairs []
+Pet.appts local/remote pairs [(pets.id / appts.pet_id)]
+Pet.appts remote columns [appts.pet_id]
+Pet.appts local columns [pets.id]
+Pet.appts relationship direction RelationshipDirection.ONETOMANY
+Pet.appts lazy loading clause :param_1 = appts.pet_id
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+(Appointment|appts) _post_configure_properties() started
+(Appointment|appts) initialize prop pet
+Appointment.pet setup primary join pets.id = appts.pet_id
+Appointment.pet setup secondary join None
+Appointment.pet synchronize pairs [(pets.id => appts.pet_id)]
+Appointment.pet secondary synchronize pairs []
+Appointment.pet local/remote pairs [(appts.pet_id / pets.id)]
+Appointment.pet remote columns [pets.id]
+Appointment.pet local columns [appts.pet_id]
+Appointment.pet relationship direction RelationshipDirection.MANYTOONE
+Appointment.pet lazy loading clause pets.id = :param_1
+Appointment.pet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop vet
+Appointment.vet setup primary join vets.id = appts.vet_id
+Appointment.vet setup secondary join None
+Appointment.vet synchronize pairs [(vets.id => appts.vet_id)]
+Appointment.vet secondary synchronize pairs []
+Appointment.vet local/remote pairs [(appts.vet_id / vets.id)]
+Appointment.vet remote columns [vets.id]
+Appointment.vet local columns [appts.vet_id]
+Appointment.vet relationship direction RelationshipDirection.MANYTOONE
+Appointment.vet lazy loading clause vets.id = :param_1
+Appointment.vet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop id
+(Appointment|appts) initialize prop pet_id
+(Appointment|appts) initialize prop vet_id
+(Appointment|appts) initialize prop date
+(Appointment|appts) initialize prop time
+(Appointment|appts) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT pets.id AS pets_id, pets.name AS pets_name, pets.species AS pets_species, pets.owner_id AS pets_owner_id 
+FROM pets 
+WHERE pets.name = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00032s] ('Buddy', 1, 0)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE appts.pet_id = ? AND appts.date = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00063s] (1, '2023-02-15', 1, 0)
+SELECT vets.id AS vets_id, vets.first_name AS vets_first_name, vets.last_name AS vets_last_name 
+FROM vets 
+WHERE vets.id = ?
+[generated in 0.00033s] (1,)
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(appts, Relationship)
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(owner, Relationship)
+(Pet|pets) _configure_property(appts, Relationship)
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(pet, Relationship)
+(Appointment|appts) _configure_property(vet, Relationship)
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop pets
+Owner.pets setup primary join owners.id = pets.owner_id
+Owner.pets setup secondary join None
+Owner.pets synchronize pairs [(owners.id => pets.owner_id)]
+Owner.pets secondary synchronize pairs []
+Owner.pets local/remote pairs [(owners.id / pets.owner_id)]
+Owner.pets remote columns [pets.owner_id]
+Owner.pets local columns [owners.id]
+Owner.pets relationship direction RelationshipDirection.ONETOMANY
+Owner.pets lazy loading clause :param_1 = pets.owner_id
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop appts
+Vet.appts setup primary join vets.id = appts.vet_id
+Vet.appts setup secondary join None
+Vet.appts synchronize pairs [(vets.id => appts.vet_id)]
+Vet.appts secondary synchronize pairs []
+Vet.appts local/remote pairs [(vets.id / appts.vet_id)]
+Vet.appts remote columns [appts.vet_id]
+Vet.appts local columns [vets.id]
+Vet.appts relationship direction RelationshipDirection.ONETOMANY
+Vet.appts lazy loading clause :param_1 = appts.vet_id
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop owner
+Pet.owner setup primary join owners.id = pets.owner_id
+Pet.owner setup secondary join None
+Pet.owner synchronize pairs [(owners.id => pets.owner_id)]
+Pet.owner secondary synchronize pairs []
+Pet.owner local/remote pairs [(pets.owner_id / owners.id)]
+Pet.owner remote columns [owners.id]
+Pet.owner local columns [pets.owner_id]
+Pet.owner relationship direction RelationshipDirection.MANYTOONE
+Pet.owner lazy loading clause owners.id = :param_1
+Pet.owner will use Session.get() to optimize instance loads
+(Pet|pets) initialize prop appts
+Pet.appts setup primary join pets.id = appts.pet_id
+Pet.appts setup secondary join None
+Pet.appts synchronize pairs [(pets.id => appts.pet_id)]
+Pet.appts secondary synchronize pairs []
+Pet.appts local/remote pairs [(pets.id / appts.pet_id)]
+Pet.appts remote columns [appts.pet_id]
+Pet.appts local columns [pets.id]
+Pet.appts relationship direction RelationshipDirection.ONETOMANY
+Pet.appts lazy loading clause :param_1 = appts.pet_id
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+(Appointment|appts) _post_configure_properties() started
+(Appointment|appts) initialize prop pet
+Appointment.pet setup primary join pets.id = appts.pet_id
+Appointment.pet setup secondary join None
+Appointment.pet synchronize pairs [(pets.id => appts.pet_id)]
+Appointment.pet secondary synchronize pairs []
+Appointment.pet local/remote pairs [(appts.pet_id / pets.id)]
+Appointment.pet remote columns [pets.id]
+Appointment.pet local columns [appts.pet_id]
+Appointment.pet relationship direction RelationshipDirection.MANYTOONE
+Appointment.pet lazy loading clause pets.id = :param_1
+Appointment.pet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop vet
+Appointment.vet setup primary join vets.id = appts.vet_id
+Appointment.vet setup secondary join None
+Appointment.vet synchronize pairs [(vets.id => appts.vet_id)]
+Appointment.vet secondary synchronize pairs []
+Appointment.vet local/remote pairs [(appts.vet_id / vets.id)]
+Appointment.vet remote columns [vets.id]
+Appointment.vet local columns [appts.vet_id]
+Appointment.vet relationship direction RelationshipDirection.MANYTOONE
+Appointment.vet lazy loading clause vets.id = :param_1
+Appointment.vet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop id
+(Appointment|appts) initialize prop pet_id
+(Appointment|appts) initialize prop vet_id
+(Appointment|appts) initialize prop date
+(Appointment|appts) initialize prop time
+(Appointment|appts) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT pets.id AS pets_id, pets.name AS pets_name, pets.species AS pets_species, pets.owner_id AS pets_owner_id 
+FROM pets 
+WHERE pets.name = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00022s] ('Buddy', 1, 0)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE appts.pet_id = ? AND appts.date = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00020s] (1, '2023-02-15', 1, 0)
+SELECT vets.id AS vets_id, vets.first_name AS vets_first_name, vets.last_name AS vets_last_name 
+FROM vets 
+WHERE vets.id = ?
+[generated in 0.00019s] (1,)
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(appts, Relationship)
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(owner, Relationship)
+(Pet|pets) _configure_property(appts, Relationship)
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(pet, Relationship)
+(Appointment|appts) _configure_property(vet, Relationship)
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop pets
+Owner.pets setup primary join owners.id = pets.owner_id
+Owner.pets setup secondary join None
+Owner.pets synchronize pairs [(owners.id => pets.owner_id)]
+Owner.pets secondary synchronize pairs []
+Owner.pets local/remote pairs [(owners.id / pets.owner_id)]
+Owner.pets remote columns [pets.owner_id]
+Owner.pets local columns [owners.id]
+Owner.pets relationship direction RelationshipDirection.ONETOMANY
+Owner.pets lazy loading clause :param_1 = pets.owner_id
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop appts
+Vet.appts setup primary join vets.id = appts.vet_id
+Vet.appts setup secondary join None
+Vet.appts synchronize pairs [(vets.id => appts.vet_id)]
+Vet.appts secondary synchronize pairs []
+Vet.appts local/remote pairs [(vets.id / appts.vet_id)]
+Vet.appts remote columns [appts.vet_id]
+Vet.appts local columns [vets.id]
+Vet.appts relationship direction RelationshipDirection.ONETOMANY
+Vet.appts lazy loading clause :param_1 = appts.vet_id
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop owner
+Pet.owner setup primary join owners.id = pets.owner_id
+Pet.owner setup secondary join None
+Pet.owner synchronize pairs [(owners.id => pets.owner_id)]
+Pet.owner secondary synchronize pairs []
+Pet.owner local/remote pairs [(pets.owner_id / owners.id)]
+Pet.owner remote columns [owners.id]
+Pet.owner local columns [pets.owner_id]
+Pet.owner relationship direction RelationshipDirection.MANYTOONE
+Pet.owner lazy loading clause owners.id = :param_1
+Pet.owner will use Session.get() to optimize instance loads
+(Pet|pets) initialize prop appts
+Pet.appts setup primary join pets.id = appts.pet_id
+Pet.appts setup secondary join None
+Pet.appts synchronize pairs [(pets.id => appts.pet_id)]
+Pet.appts secondary synchronize pairs []
+Pet.appts local/remote pairs [(pets.id / appts.pet_id)]
+Pet.appts remote columns [appts.pet_id]
+Pet.appts local columns [pets.id]
+Pet.appts relationship direction RelationshipDirection.ONETOMANY
+Pet.appts lazy loading clause :param_1 = appts.pet_id
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+(Appointment|appts) _post_configure_properties() started
+(Appointment|appts) initialize prop pet
+Appointment.pet setup primary join pets.id = appts.pet_id
+Appointment.pet setup secondary join None
+Appointment.pet synchronize pairs [(pets.id => appts.pet_id)]
+Appointment.pet secondary synchronize pairs []
+Appointment.pet local/remote pairs [(appts.pet_id / pets.id)]
+Appointment.pet remote columns [pets.id]
+Appointment.pet local columns [appts.pet_id]
+Appointment.pet relationship direction RelationshipDirection.MANYTOONE
+Appointment.pet lazy loading clause pets.id = :param_1
+Appointment.pet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop vet
+Appointment.vet setup primary join vets.id = appts.vet_id
+Appointment.vet setup secondary join None
+Appointment.vet synchronize pairs [(vets.id => appts.vet_id)]
+Appointment.vet secondary synchronize pairs []
+Appointment.vet local/remote pairs [(appts.vet_id / vets.id)]
+Appointment.vet remote columns [vets.id]
+Appointment.vet local columns [appts.vet_id]
+Appointment.vet relationship direction RelationshipDirection.MANYTOONE
+Appointment.vet lazy loading clause vets.id = :param_1
+Appointment.vet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop id
+(Appointment|appts) initialize prop pet_id
+(Appointment|appts) initialize prop vet_id
+(Appointment|appts) initialize prop date
+(Appointment|appts) initialize prop time
+(Appointment|appts) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT pets.id AS pets_id, pets.name AS pets_name, pets.species AS pets_species, pets.owner_id AS pets_owner_id 
+FROM pets 
+WHERE pets.name = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00039s] ('Buddy', 1, 0)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE appts.pet_id = ? AND appts.date = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00036s] (1, '2023-02-15', 1, 0)
+SELECT vets.id AS vets_id, vets.first_name AS vets_first_name, vets.last_name AS vets_last_name 
+FROM vets 
+WHERE vets.id = ?
+[generated in 0.00030s] (1,)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE ? = appts.vet_id
+[generated in 0.00038s] (1,)
+UPDATE appts SET date=?, time=? WHERE appts.id = ?
+[generated in 0.00041s] ('2023-02-18', '1100', 1)
+COMMIT
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(appts, Relationship)
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(owner, Relationship)
+(Pet|pets) _configure_property(appts, Relationship)
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(pet, Relationship)
+(Appointment|appts) _configure_property(vet, Relationship)
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop pets
+Owner.pets setup primary join owners.id = pets.owner_id
+Owner.pets setup secondary join None
+Owner.pets synchronize pairs [(owners.id => pets.owner_id)]
+Owner.pets secondary synchronize pairs []
+Owner.pets local/remote pairs [(owners.id / pets.owner_id)]
+Owner.pets remote columns [pets.owner_id]
+Owner.pets local columns [owners.id]
+Owner.pets relationship direction RelationshipDirection.ONETOMANY
+Owner.pets lazy loading clause :param_1 = pets.owner_id
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop appts
+Vet.appts setup primary join vets.id = appts.vet_id
+Vet.appts setup secondary join None
+Vet.appts synchronize pairs [(vets.id => appts.vet_id)]
+Vet.appts secondary synchronize pairs []
+Vet.appts local/remote pairs [(vets.id / appts.vet_id)]
+Vet.appts remote columns [appts.vet_id]
+Vet.appts local columns [vets.id]
+Vet.appts relationship direction RelationshipDirection.ONETOMANY
+Vet.appts lazy loading clause :param_1 = appts.vet_id
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop owner
+Pet.owner setup primary join owners.id = pets.owner_id
+Pet.owner setup secondary join None
+Pet.owner synchronize pairs [(owners.id => pets.owner_id)]
+Pet.owner secondary synchronize pairs []
+Pet.owner local/remote pairs [(pets.owner_id / owners.id)]
+Pet.owner remote columns [owners.id]
+Pet.owner local columns [pets.owner_id]
+Pet.owner relationship direction RelationshipDirection.MANYTOONE
+Pet.owner lazy loading clause owners.id = :param_1
+Pet.owner will use Session.get() to optimize instance loads
+(Pet|pets) initialize prop appts
+Pet.appts setup primary join pets.id = appts.pet_id
+Pet.appts setup secondary join None
+Pet.appts synchronize pairs [(pets.id => appts.pet_id)]
+Pet.appts secondary synchronize pairs []
+Pet.appts local/remote pairs [(pets.id / appts.pet_id)]
+Pet.appts remote columns [appts.pet_id]
+Pet.appts local columns [pets.id]
+Pet.appts relationship direction RelationshipDirection.ONETOMANY
+Pet.appts lazy loading clause :param_1 = appts.pet_id
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+(Appointment|appts) _post_configure_properties() started
+(Appointment|appts) initialize prop pet
+Appointment.pet setup primary join pets.id = appts.pet_id
+Appointment.pet setup secondary join None
+Appointment.pet synchronize pairs [(pets.id => appts.pet_id)]
+Appointment.pet secondary synchronize pairs []
+Appointment.pet local/remote pairs [(appts.pet_id / pets.id)]
+Appointment.pet remote columns [pets.id]
+Appointment.pet local columns [appts.pet_id]
+Appointment.pet relationship direction RelationshipDirection.MANYTOONE
+Appointment.pet lazy loading clause pets.id = :param_1
+Appointment.pet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop vet
+Appointment.vet setup primary join vets.id = appts.vet_id
+Appointment.vet setup secondary join None
+Appointment.vet synchronize pairs [(vets.id => appts.vet_id)]
+Appointment.vet secondary synchronize pairs []
+Appointment.vet local/remote pairs [(appts.vet_id / vets.id)]
+Appointment.vet remote columns [vets.id]
+Appointment.vet local columns [appts.vet_id]
+Appointment.vet relationship direction RelationshipDirection.MANYTOONE
+Appointment.vet lazy loading clause vets.id = :param_1
+Appointment.vet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop id
+(Appointment|appts) initialize prop pet_id
+(Appointment|appts) initialize prop vet_id
+(Appointment|appts) initialize prop date
+(Appointment|appts) initialize prop time
+(Appointment|appts) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT pets.id AS pets_id, pets.name AS pets_name, pets.species AS pets_species, pets.owner_id AS pets_owner_id 
+FROM pets 
+WHERE pets.name = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00051s] ('Buddy', 1, 0)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE appts.pet_id = ? AND appts.date = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00104s] (1, '2023-02-15', 1, 0)
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(appts, Relationship)
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(owner, Relationship)
+(Pet|pets) _configure_property(appts, Relationship)
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(pet, Relationship)
+(Appointment|appts) _configure_property(vet, Relationship)
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop pets
+Owner.pets setup primary join owners.id = pets.owner_id
+Owner.pets setup secondary join None
+Owner.pets synchronize pairs [(owners.id => pets.owner_id)]
+Owner.pets secondary synchronize pairs []
+Owner.pets local/remote pairs [(owners.id / pets.owner_id)]
+Owner.pets remote columns [pets.owner_id]
+Owner.pets local columns [owners.id]
+Owner.pets relationship direction RelationshipDirection.ONETOMANY
+Owner.pets lazy loading clause :param_1 = pets.owner_id
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop appts
+Vet.appts setup primary join vets.id = appts.vet_id
+Vet.appts setup secondary join None
+Vet.appts synchronize pairs [(vets.id => appts.vet_id)]
+Vet.appts secondary synchronize pairs []
+Vet.appts local/remote pairs [(vets.id / appts.vet_id)]
+Vet.appts remote columns [appts.vet_id]
+Vet.appts local columns [vets.id]
+Vet.appts relationship direction RelationshipDirection.ONETOMANY
+Vet.appts lazy loading clause :param_1 = appts.vet_id
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop owner
+Pet.owner setup primary join owners.id = pets.owner_id
+Pet.owner setup secondary join None
+Pet.owner synchronize pairs [(owners.id => pets.owner_id)]
+Pet.owner secondary synchronize pairs []
+Pet.owner local/remote pairs [(pets.owner_id / owners.id)]
+Pet.owner remote columns [owners.id]
+Pet.owner local columns [pets.owner_id]
+Pet.owner relationship direction RelationshipDirection.MANYTOONE
+Pet.owner lazy loading clause owners.id = :param_1
+Pet.owner will use Session.get() to optimize instance loads
+(Pet|pets) initialize prop appts
+Pet.appts setup primary join pets.id = appts.pet_id
+Pet.appts setup secondary join None
+Pet.appts synchronize pairs [(pets.id => appts.pet_id)]
+Pet.appts secondary synchronize pairs []
+Pet.appts local/remote pairs [(pets.id / appts.pet_id)]
+Pet.appts remote columns [appts.pet_id]
+Pet.appts local columns [pets.id]
+Pet.appts relationship direction RelationshipDirection.ONETOMANY
+Pet.appts lazy loading clause :param_1 = appts.pet_id
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+(Appointment|appts) _post_configure_properties() started
+(Appointment|appts) initialize prop pet
+Appointment.pet setup primary join pets.id = appts.pet_id
+Appointment.pet setup secondary join None
+Appointment.pet synchronize pairs [(pets.id => appts.pet_id)]
+Appointment.pet secondary synchronize pairs []
+Appointment.pet local/remote pairs [(appts.pet_id / pets.id)]
+Appointment.pet remote columns [pets.id]
+Appointment.pet local columns [appts.pet_id]
+Appointment.pet relationship direction RelationshipDirection.MANYTOONE
+Appointment.pet lazy loading clause pets.id = :param_1
+Appointment.pet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop vet
+Appointment.vet setup primary join vets.id = appts.vet_id
+Appointment.vet setup secondary join None
+Appointment.vet synchronize pairs [(vets.id => appts.vet_id)]
+Appointment.vet secondary synchronize pairs []
+Appointment.vet local/remote pairs [(appts.vet_id / vets.id)]
+Appointment.vet remote columns [vets.id]
+Appointment.vet local columns [appts.vet_id]
+Appointment.vet relationship direction RelationshipDirection.MANYTOONE
+Appointment.vet lazy loading clause vets.id = :param_1
+Appointment.vet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop id
+(Appointment|appts) initialize prop pet_id
+(Appointment|appts) initialize prop vet_id
+(Appointment|appts) initialize prop date
+(Appointment|appts) initialize prop time
+(Appointment|appts) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT pets.id AS pets_id, pets.name AS pets_name, pets.species AS pets_species, pets.owner_id AS pets_owner_id 
+FROM pets 
+WHERE pets.name = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00040s] ('Buddy', 1, 0)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE appts.pet_id = ? AND appts.date = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00036s] (1, '2023-02-15', 1, 0)
+SELECT vets.id AS vets_id, vets.first_name AS vets_first_name, vets.last_name AS vets_last_name 
+FROM vets 
+WHERE vets.id = ?
+[generated in 0.00029s] (1,)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE ? = appts.vet_id
+[generated in 0.00041s] (1,)
+ROLLBACK
+(Owner|owners) _configure_property(pets, Relationship)
+(Owner|owners) _configure_property(id, Column)
+(Owner|owners) _configure_property(first_name, Column)
+(Owner|owners) _configure_property(last_name, Column)
+(Owner|owners) _configure_property(email, Column)
+(Owner|owners) _configure_property(phone_number, Column)
+(Owner|owners) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<owners>, primary_key=True, nullable=False)])
+(Owner|owners) constructed
+(Vet|vets) _configure_property(appts, Relationship)
+(Vet|vets) _configure_property(id, Column)
+(Vet|vets) _configure_property(first_name, Column)
+(Vet|vets) _configure_property(last_name, Column)
+(Vet|vets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<vets>, primary_key=True, nullable=False)])
+(Vet|vets) constructed
+(Pet|pets) _configure_property(owner, Relationship)
+(Pet|pets) _configure_property(appts, Relationship)
+(Pet|pets) _configure_property(id, Column)
+(Pet|pets) _configure_property(name, Column)
+(Pet|pets) _configure_property(species, Column)
+(Pet|pets) _configure_property(owner_id, Column)
+(Pet|pets) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<pets>, primary_key=True, nullable=False)])
+(Pet|pets) constructed
+(Appointment|appts) _configure_property(pet, Relationship)
+(Appointment|appts) _configure_property(vet, Relationship)
+(Appointment|appts) _configure_property(id, Column)
+(Appointment|appts) _configure_property(pet_id, Column)
+(Appointment|appts) _configure_property(vet_id, Column)
+(Appointment|appts) _configure_property(date, Column)
+(Appointment|appts) _configure_property(time, Column)
+(Appointment|appts) Identified primary key columns: OrderedSet([Column('id', INTEGER(), table=<appts>, primary_key=True, nullable=False)])
+(Appointment|appts) constructed
+BEGIN (implicit)
+PRAGMA main.table_info("owners")
+[raw sql] ()
+PRAGMA main.table_info("vets")
+[raw sql] ()
+PRAGMA main.table_info("pets")
+[raw sql] ()
+PRAGMA main.table_info("appts")
+[raw sql] ()
+COMMIT
+(Owner|owners) _post_configure_properties() started
+(Owner|owners) initialize prop pets
+Owner.pets setup primary join owners.id = pets.owner_id
+Owner.pets setup secondary join None
+Owner.pets synchronize pairs [(owners.id => pets.owner_id)]
+Owner.pets secondary synchronize pairs []
+Owner.pets local/remote pairs [(owners.id / pets.owner_id)]
+Owner.pets remote columns [pets.owner_id]
+Owner.pets local columns [owners.id]
+Owner.pets relationship direction RelationshipDirection.ONETOMANY
+Owner.pets lazy loading clause :param_1 = pets.owner_id
+(Owner|owners) initialize prop id
+(Owner|owners) initialize prop first_name
+(Owner|owners) initialize prop last_name
+(Owner|owners) initialize prop email
+(Owner|owners) initialize prop phone_number
+(Owner|owners) _post_configure_properties() complete
+(Vet|vets) _post_configure_properties() started
+(Vet|vets) initialize prop appts
+Vet.appts setup primary join vets.id = appts.vet_id
+Vet.appts setup secondary join None
+Vet.appts synchronize pairs [(vets.id => appts.vet_id)]
+Vet.appts secondary synchronize pairs []
+Vet.appts local/remote pairs [(vets.id / appts.vet_id)]
+Vet.appts remote columns [appts.vet_id]
+Vet.appts local columns [vets.id]
+Vet.appts relationship direction RelationshipDirection.ONETOMANY
+Vet.appts lazy loading clause :param_1 = appts.vet_id
+(Vet|vets) initialize prop id
+(Vet|vets) initialize prop first_name
+(Vet|vets) initialize prop last_name
+(Vet|vets) _post_configure_properties() complete
+(Pet|pets) _post_configure_properties() started
+(Pet|pets) initialize prop owner
+Pet.owner setup primary join owners.id = pets.owner_id
+Pet.owner setup secondary join None
+Pet.owner synchronize pairs [(owners.id => pets.owner_id)]
+Pet.owner secondary synchronize pairs []
+Pet.owner local/remote pairs [(pets.owner_id / owners.id)]
+Pet.owner remote columns [owners.id]
+Pet.owner local columns [pets.owner_id]
+Pet.owner relationship direction RelationshipDirection.MANYTOONE
+Pet.owner lazy loading clause owners.id = :param_1
+Pet.owner will use Session.get() to optimize instance loads
+(Pet|pets) initialize prop appts
+Pet.appts setup primary join pets.id = appts.pet_id
+Pet.appts setup secondary join None
+Pet.appts synchronize pairs [(pets.id => appts.pet_id)]
+Pet.appts secondary synchronize pairs []
+Pet.appts local/remote pairs [(pets.id / appts.pet_id)]
+Pet.appts remote columns [appts.pet_id]
+Pet.appts local columns [pets.id]
+Pet.appts relationship direction RelationshipDirection.ONETOMANY
+Pet.appts lazy loading clause :param_1 = appts.pet_id
+(Pet|pets) initialize prop id
+(Pet|pets) initialize prop name
+(Pet|pets) initialize prop species
+(Pet|pets) initialize prop owner_id
+(Pet|pets) _post_configure_properties() complete
+(Appointment|appts) _post_configure_properties() started
+(Appointment|appts) initialize prop pet
+Appointment.pet setup primary join pets.id = appts.pet_id
+Appointment.pet setup secondary join None
+Appointment.pet synchronize pairs [(pets.id => appts.pet_id)]
+Appointment.pet secondary synchronize pairs []
+Appointment.pet local/remote pairs [(appts.pet_id / pets.id)]
+Appointment.pet remote columns [pets.id]
+Appointment.pet local columns [appts.pet_id]
+Appointment.pet relationship direction RelationshipDirection.MANYTOONE
+Appointment.pet lazy loading clause pets.id = :param_1
+Appointment.pet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop vet
+Appointment.vet setup primary join vets.id = appts.vet_id
+Appointment.vet setup secondary join None
+Appointment.vet synchronize pairs [(vets.id => appts.vet_id)]
+Appointment.vet secondary synchronize pairs []
+Appointment.vet local/remote pairs [(appts.vet_id / vets.id)]
+Appointment.vet remote columns [vets.id]
+Appointment.vet local columns [appts.vet_id]
+Appointment.vet relationship direction RelationshipDirection.MANYTOONE
+Appointment.vet lazy loading clause vets.id = :param_1
+Appointment.vet will use Session.get() to optimize instance loads
+(Appointment|appts) initialize prop id
+(Appointment|appts) initialize prop pet_id
+(Appointment|appts) initialize prop vet_id
+(Appointment|appts) initialize prop date
+(Appointment|appts) initialize prop time
+(Appointment|appts) _post_configure_properties() complete
+BEGIN (implicit)
+SELECT pets.id AS pets_id, pets.name AS pets_name, pets.species AS pets_species, pets.owner_id AS pets_owner_id 
+FROM pets 
+WHERE pets.name = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00052s] ('Buddy', 1, 0)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE appts.pet_id = ? AND appts.date = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00080s] (1, '2023-02-15', 1, 0)
+SELECT vets.id AS vets_id, vets.first_name AS vets_first_name, vets.last_name AS vets_last_name 
+FROM vets 
+WHERE vets.id = ?
+[generated in 0.00032s] (1,)
+SELECT appts.id AS appts_id, appts.pet_id AS appts_pet_id, appts.vet_id AS appts_vet_id, appts.date AS appts_date, appts.time AS appts_time 
+FROM appts 
+WHERE ? = appts.vet_id
+[generated in 0.00043s] (1,)
+UPDATE appts SET pet_id=? WHERE appts.id = ?
+[generated in 0.00040s] [(None, 1), (1, 6)]
+COMMIT

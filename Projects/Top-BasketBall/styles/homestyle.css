@@ -1,0 +1,76 @@
+/* headers */
+.jumbotron {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: #DD0000;
+    font-family: 'ESP_Bold_Italic';
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 77px;
+    color: #FFFFFF;
+}
+
+.playerSec {
+    margin-right: 20px;
+}
+
+/* Images */
+.playerphotos {
+    margin-left: 20VH;
+}
+
+.position-photo img {
+    height: 20vh;
+    width: auto;
+}
+
+/* Positions */
+.playertitles {
+    margin-right: 5px;
+}
+
+.position-title:hover {
+    color: #DD0000;
+}
+
+.position-title>a:visited {
+    color: #000000
+}
+
+
+.position-tabs {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.position-title {
+    display: flex;
+    justify-content: center;
+}
+
+.analyst-title {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* footer */
+.footer {
+    background-color: #DD0000;
+}
+
+.footertext {
+    color: white;
+    font-size: 30px;
+}
+
+/* navbar */
+.nav-style {
+    background-color: #48494A;
+}
+
+.navbar-expand-lg {
+    justify-content: center;
+}
